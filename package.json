@@ -46,8 +46,7 @@
             {
                 "command": "STARLIMS.Checkin",
                 "title": "Checkin"
-            }
-            ,
+            },
             {
                 "command": "STARLIMS.save",
                 "title": "Save To Server"
@@ -70,8 +69,7 @@
                 {
                     "command": "STARLIMS.Checkin",
                     "when": "view == STARLIMS && viewItem == HTMLFORMCODE  || view == STARLIMS && viewItem == HTMLFORMXML  || view == STARLIMS && viewItem == XFDFORMCODE  || view == STARLIMS && viewItem == XFDFORMXML  || view == STARLIMS && viewItem == SS  || view == STARLIMS && viewItem == DS  || view == STARLIMS && viewItem == CS|| view == STARLIMS && viewItem == APPSS  || view == STARLIMS && viewItem == APPDS  || view == STARLIMS && viewItem == APPCS"
-                }
-                ,
+                },
                 {
                     "command": "STARLIMS.save"
                 }
@@ -82,15 +80,23 @@
                 "type": "object",
                 "title": "STARLIMS VSCode Configuration",
                 "properties": {
-                    "STARLIMS.url": {
-                        "type": "string",
-                        "default": "",
-                        "description": "STARLIMS Installation URL"
-                    },
-                    "STARLIMS.user": {
-                        "type": "string",
-                        "default": "SYSADM",
-                        "description": "STARLIMS User ID"
+                    "STARLIMS.intallations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "url": {
+                                    "type": "string",
+                                    "default": "",
+                                    "description": "STARLIMS Installation URL"
+                                },
+                                "user": {
+                                    "type": "string",
+                                    "default": "SYSADM",
+                                    "description": "STARLIMS User ID"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -134,6 +140,7 @@
         "@types/request": "^2.48.1",
         "@types/request-promise": "^4.1.42",
         "async-mkdirp": "^1.2.7",
+        "event-stream": "^4.0.1",
         "mkdirp": "^0.5.1",
         "request-promise": "^4.2.2"
     }

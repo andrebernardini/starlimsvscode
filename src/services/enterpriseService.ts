@@ -84,21 +84,21 @@ export class EnterpriseService {
         return result;
     }
     
-    private config: any;
+    private config: Map<string, STARLIMSInstall>;
 
-    constructor (config: any) {
+    constructor (config: Map<string, STARLIMSInstall>) {
         this.config = config;
     }
 
-    public async getEnterpriseItem(itemType: string, itemID: string, parentID: string) {
+    public async getEnterpriseItem(itemType: string, itemID: string, parentID: string, url: string) {
         
         let result : any = null;
         
         const options: any = {
             method: 'GET',
             headers: {
-                'STARLIMSUser': process.env.STARLIMS_USER,
-                'STARLIMSPass': process.env.STARLIMS_PASSWORD
+                'STARLIMSUser': this.config.get(url)?.user,
+                'STARLIMSPass': this.config.get(url)?.pw
             },
             qs: {
                 'ItemType': itemType,
@@ -109,7 +109,7 @@ export class EnterpriseService {
         };
 
         try {
-            result = await request(this.config.url  + '/SCM_API.GetEnterpriseItems.lims', options);
+            result = await request(url  + '/SCM_API.GetEnterpriseItems.lims', options);
         } catch (e) {
             console.error(e);
             vscode.window.showErrorMessage(e.error);
@@ -275,6 +275,7 @@ export class EnterpriseService {
 
 
 export enum EnterpriseItemType {
+    Server = "SERVER",
     EnterpriseCategory = "CATEGORY",
     AppCategory = "APPCATEGORY",
     Application = "APP",
@@ -292,4 +293,16 @@ export enum EnterpriseItemType {
     ClientScriptCategory = "CSCAT",
     DataSource = "DS",
     DataSourceCategory = "DSCAT"
+}
+
+export class STARLIMSInstall {
+    url: string;
+    user: string|null;
+    pw: string|null;
+
+    constructor(url:string, user:string|null, pw:string|null) {
+        this.url = url;
+        this.user = user;
+        this.pw = pw;
+    }
 }
