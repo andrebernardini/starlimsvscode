@@ -90,31 +90,58 @@ export class EnterpriseService {
         this.config = config;
     }
 
-    public async getEnterpriseItem(itemType: string, itemID: string, parentID: string, url: string) {
-        
-        let result : any = null;
-        
-        const options: any = {
-            method: 'GET',
-            headers: {
-                'STARLIMSUser': this.config.get(url)?.user,
-                'STARLIMSPass': this.config.get(url)?.pw
-            },
-            qs: {
-                'ItemType': itemType,
-                'ItemID': itemID,
-                'ParentID': parentID
-            },
-            json: true
-        };
+    private async getInstallationConfig(url:string) : Promise<STARLIMSInstall | null>{
+        const install : STARLIMSInstall|undefined = this.config.get(url);
+        if(!install) { 
+            return null;
+        }
+        else {
+            if(!install.user) {
+                install.user = await vscode.window.showInputBox({
+                    prompt: `Enter user for installation '${url}'`,
+                    password: false,
+                    ignoreFocusOut: true
+                })??null;
+            } 
 
-        try {
-            result = await request(url  + '/SCM_API.GetEnterpriseItems.lims', options);
-        } catch (e) {
-            console.error(e);
-            vscode.window.showErrorMessage(e.error);
+            if(!install.pw) {
+                install.pw = await vscode.window.showInputBox({
+                    prompt: `Enter password for installation '${url}'`,
+                    password: true,
+                    ignoreFocusOut: true
+                })??null;
+            } 
         }
 
+        return install;
+    }
+
+    public async getEnterpriseItem(itemType: string, itemID: string, parentID: string, url: string) {
+        const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
+
+        let result : any = null;
+        if(config) {
+            const options: any = {
+                method: 'GET',
+                headers: {
+                    'STARLIMSUser': config.user,
+                    'STARLIMSPass': config.pw
+                },
+                qs: {
+                    'ItemType': itemType,
+                    'ItemID': itemID,
+                    'ParentID': parentID
+                },
+                json: true
+            };
+
+            try {
+                result = await request(url  + '/SCM_API.GetEnterpriseItems.lims', options);
+            } catch (e) {
+                console.error(e);
+                vscode.window.showErrorMessage(e.error);
+            }
+        }
         return result;
     }
 
