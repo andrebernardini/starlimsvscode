@@ -14,7 +14,7 @@ export async function activate(context: vscode.ExtensionContext) {
     let config = vscode.workspace.getConfiguration("STARLIMS");
     let installations: object[] | undefined = config.get('installations');
 
-    const installMap : Map<string, STARLIMSInstall> = new Map();
+    const installMap : Map<string, STARLIMSInstall> = new Map<string, STARLIMSInstall>();
 
     if(installations) {
     installations.forEach((item:any) => {
@@ -24,7 +24,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
     process.env['STARLIMS_Credentials'] = JSON.stringify(installMap);
 
-    const enterpriseService = new EnterpriseService(config);
+    const enterpriseService = new EnterpriseService(installMap);
     const enterpriseProvider = new EnterpriseTreeDataProvider(enterpriseService);
     
     vscode.window.registerTreeDataProvider('STARLIMS', enterpriseProvider);
