@@ -22,21 +22,45 @@ export async function activate(context: vscode.ExtensionContext) {
             return;
         }
         
-        let result = await enterpriseService.getEntepriseItemCode(item.type, item.enterpriseId);
+        let result = await enterpriseService.getEntepriseItemCode(item.url, item.type, item.enterpriseId);
         if (result) {
-            // open code in new document
-            const fileExtension = '.' + (result.Language !== undefined && result.Language !== '' ? result.Language.toLowerCase() : 'txt');
-            
-            const newFile = vscode.Uri.parse('untitled:' + path.join(vscode.workspace.rootPath ? vscode.workspace.rootPath : '', result.FullPath + fileExtension));
-            
-            let document = await vscode.workspace.openTextDocument(newFile);
-            const edit = new vscode.WorkspaceEdit();
-            edit.insert(newFile, new vscode.Position(0, 0), result.Code);
-            
-            if (await vscode.workspace.applyEdit(edit)) {
-                vscode.window.showTextDocument(document);
+            const wsFolders = vscode.workspace.workspaceFolders;
+            let storagePath:string;
+            if(!wsFolders) {
+                vscode.window.showInformationMessage('Error! You need to have a folder open in your workspace.');
             } else {
-                vscode.window.showInformationMessage('Error!');
+                storagePath = wsFolders[0].uri.fsPath;
+                path.join(storagePath, result.FullPath);
+
+                // open code in new document
+                const fileExtension = '.' + (result.Language !== undefined && result.Language !== '' ? result.Language.toLowerCase() : 'txt');
+                const newFile = vscode.Uri.parse(storagePath + fileExtension);
+                
+                let document = await vscode.workspace.openTextDocument(newFile);
+                if(document.getText().length === 0) {
+                    enterpriseService.updateFileInfo(storagePath, item.url, item.enterpriseId)
+                    
+                    const edit = new vscode.WorkspaceEdit();
+                    edit.insert(newFile, new vscode.Position(0, 0), result.Code);
+                    if (! await vscode.workspace.applyEdit(edit)) {
+                        vscode.window.showTextDocument(document);
+                    } else {
+                        vscode.window.showInformationMessage('Error!');
+                    }
+                } else {
+                    var firstLine = document.lineAt(0);
+                    var lastLine = document.lineAt(document.lineCount - 1);
+                    var textRange = new vscode.Range(firstLine.range.start, lastLine.range.end);
+                    const edit = new vscode.WorkspaceEdit();
+                    edit.replace(newFile, textRange, result.Code);
+                    vscode.window.showTextDocument(document);
+
+                    if (! await vscode.workspace.applyEdit(edit)) {
+                        vscode.window.showTextDocument(document);
+                    } else {
+                        vscode.window.showInformationMessage('Error!');
+                    }
+                }
             }
         }
     });

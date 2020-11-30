@@ -83,6 +83,7 @@ export class TreeEnterpriseItem extends vscode.TreeItem {
     enterpriseId: string;
     parentEnterpriseId : string;
     url: string;
+    path: string;
 
     constructor(
         type: EnterpriseItemType,
@@ -91,6 +92,7 @@ export class TreeEnterpriseItem extends vscode.TreeItem {
         parentId: string,
         collapsibleState: vscode.TreeItemCollapsibleState,
         url: string,
+        path: string,
         command?: vscode.Command
     ) {
         super(label, collapsibleState);
@@ -99,6 +101,7 @@ export class TreeEnterpriseItem extends vscode.TreeItem {
         this.enterpriseId = id;
         this.parentEnterpriseId = parentId;
         this.url = url;
+        this.path = path;
     }
 }
 

@@ -98,6 +98,10 @@
                                     "type": "string",
                                     "default": "SYSADM",
                                     "description": "STARLIMS User ID"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "Short name for the installation (will be used as root level dir in the filesystem)"
                                 }
                             }
                         }

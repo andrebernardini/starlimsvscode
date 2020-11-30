@@ -86,8 +86,7 @@ export class EnterpriseService {
     
     private config: Map<string, STARLIMSInstall>;
     private globalState : vscode.Memento;
-    private oFileInfo : any;
-
+    
     constructor (globalState : vscode.Memento) {
         const config = vscode.workspace.getConfiguration("STARLIMS");
         const installations: object[] | undefined = config.get('installations');
@@ -95,13 +94,23 @@ export class EnterpriseService {
         this.globalState = globalState;
         if(installations) {
             installations.forEach((item:any) => {
-                this.config.set(item.url, new STARLIMSInstall(item.url, item.user, null));
+                this.config.set(item.url, new STARLIMSInstall(item.url, item.name, item.user, null));
             });
         }
 
         if(!globalState.get("oFileInfo")) {
             globalState.update("oFileInfo", {});
         }
+    }
+
+    public async updateFileInfo(path:string, url:string, id:string) : Promise<void> {
+        const oFileInfo :any = this.globalState.get("oFileInfo");
+        oFileInfo[path] = {'url':url, 'id':id};
+        this.globalState.update('oFileInfo', oFileInfo);
+    }
+
+    private async getFileInfo(path:string) : Promise<any> {
+        return this.globalState.get<any>("oFileInfo")[path];
     }
 
     private async getInstallationConfig(url:string) : Promise<STARLIMSInstall | null>{
@@ -159,7 +168,7 @@ export class EnterpriseService {
         return result;
     }
 
-    public async getEntepriseItemCode(itemType: string, itemID: string) {
+    public async getEntepriseItemCode(url: string, itemType: string, itemID: string) {
         let result : any = null;
 
         const options: any = {
@@ -176,7 +185,8 @@ export class EnterpriseService {
         };
 
         try {
-            result = await request(this.config.url  + '/SCM_API.GetCode.lims', options);
+            result = await request(url  + '/SCM_API.GetCode.lims', options);
+
         } catch (e) {
             console.error(e);
             vscode.window.showErrorMessage(e.error);
@@ -338,11 +348,13 @@ export enum EnterpriseItemType {
 
 export class STARLIMSInstall {
     url: string;
+    name: string;
     user: string|null;
     pw: string|null;
 
-    constructor(url:string, user:string|null, pw:string|null) {
+    constructor(url:string, name:string, user:string|null, pw:string|null) {
         this.url = url;
+        this.name = name;
         this.user = user;
         this.pw = pw;
     }
