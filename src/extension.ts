@@ -38,7 +38,7 @@ export async function activate(context: vscode.ExtensionContext) {
                 
                 let document = await vscode.workspace.openTextDocument(newFile);
                 if(document.getText().length === 0) {
-                    enterpriseService.updateFileInfo(storagePath, item.url, item.enterpriseId)
+                    enterpriseService.updateFileInfo(storagePath, item.url, item.enterpriseId);
                     
                     const edit = new vscode.WorkspaceEdit();
                     edit.insert(newFile, new vscode.Position(0, 0), result.Code);
