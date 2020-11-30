@@ -4,27 +4,14 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import { EnterpriseTreeDataProvider, TreeEnterpriseItem } from './enterpriseProvider';
-import { EnterpriseService, STARLIMSInstall } from './services/enterpriseService';
+import { EnterpriseService } from './services/enterpriseService';
 
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export async function activate(context: vscode.ExtensionContext) {    
     
-    let config = vscode.workspace.getConfiguration("STARLIMS");
-    let installations: object[] | undefined = config.get('installations');
-
-    const installMap : Map<string, STARLIMSInstall> = new Map<string, STARLIMSInstall>();
-
-    if(installations) {
-    installations.forEach((item:any) => {
-            installMap.set(item.url, new STARLIMSInstall(item.url, item.user, null));
-        });
-    }
-
-    process.env['STARLIMS_Credentials'] = JSON.stringify(installMap);
-
-    const enterpriseService = new EnterpriseService(installMap);
+    const enterpriseService = new EnterpriseService(context.globalState);
     const enterpriseProvider = new EnterpriseTreeDataProvider(enterpriseService);
     
     vscode.window.registerTreeDataProvider('STARLIMS', enterpriseProvider);

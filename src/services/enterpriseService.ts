@@ -85,9 +85,23 @@ export class EnterpriseService {
     }
     
     private config: Map<string, STARLIMSInstall>;
+    private globalState : vscode.Memento;
+    private oFileInfo : any;
 
-    constructor (config: Map<string, STARLIMSInstall>) {
-        this.config = config;
+    constructor (globalState : vscode.Memento) {
+        const config = vscode.workspace.getConfiguration("STARLIMS");
+        const installations: object[] | undefined = config.get('installations');
+        this.config = new Map<string, STARLIMSInstall>();
+        this.globalState = globalState;
+        if(installations) {
+            installations.forEach((item:any) => {
+                this.config.set(item.url, new STARLIMSInstall(item.url, item.user, null));
+            });
+        }
+
+        if(!globalState.get("oFileInfo")) {
+            globalState.update("oFileInfo", {});
+        }
     }
 
     private async getInstallationConfig(url:string) : Promise<STARLIMSInstall | null>{
