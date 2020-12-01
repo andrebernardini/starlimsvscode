@@ -76,15 +76,15 @@ export async function activate(context: vscode.ExtensionContext) {
         const result = await vscode.window.showOpenDialog(options);
         if (result ) {
             const path = result[0].path;
-            const appManifest = await enterpriseService.getApplicationManifest(node.enterpriseId);
+            const appManifest = await enterpriseService.getApplicationManifest(node.url, node.enterpriseId);
             console.log(path);
             console.log(appManifest);
-            await enterpriseService.downloadApplication(appManifest, path);
+            await enterpriseService.downloadApplication(node.url, appManifest, path);
         }
     });
 
     vscode.commands.registerCommand('STARLIMS.Checkout', async (item: TreeEnterpriseItem) => {
-        await enterpriseService.checkout(item.type, item.enterpriseId);
+        await enterpriseService.checkout(item.url, item.type, item.enterpriseId);
     });
 
     vscode.commands.registerCommand('STARLIMS.Checkin', async (item: TreeEnterpriseItem) => {
@@ -93,21 +93,21 @@ export async function activate(context: vscode.ExtensionContext) {
             ignoreFocusOut: true,
         })||'';
        
-        await enterpriseService.checkin(item.type, item.enterpriseId, checkinReason);
+        await enterpriseService.checkin(item.url, item.type, item.enterpriseId, checkinReason);
     });
 
     vscode.commands.registerCommand('STARLIMS.refresh', async (item: TreeEnterpriseItem) => {
         await enterpriseProvider.refresh();
     });
 
-    vscode.commands.registerCommand('STARLIMS.save', async (item: vscode.TreeItem) => {
+    vscode.commands.registerCommand('STARLIMS.save', async (item: TreeEnterpriseItem) => {
         let activeEditor : any = vscode.window.activeTextEditor;
         if(activeEditor !== undefined) {
             let sFileName : any = activeEditor.document.fileName;
             let sCode : any = activeEditor.document.getText();
             sFileName = path.basename(sFileName);
             sFileName = sFileName.substr(0, sFileName.lastIndexOf('.'));
-            await enterpriseService.save(sFileName, sCode);
+            await enterpriseService.save(item.url, sFileName, sCode);
         }
     });
 }

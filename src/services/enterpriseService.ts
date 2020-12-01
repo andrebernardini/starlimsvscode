@@ -5,80 +5,89 @@ import * as path from 'path';
 
 
 export class EnterpriseService {
-    public async save(itemID: string, code: string) {
+    public async save(url: string, itemID: string, code: string) {
         let result : any = null;
+        const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
         
-        const options: any = {
-            method: 'POST',
-            headers: {
-                'STARLIMSUser': process.env.STARLIMS_USER,
-                'STARLIMSPass': process.env.STARLIMS_PASSWORD
-            },
-            qs: {
-                'ItemId': itemID
-            },
-            body: code
-        };
+        if(config) {
+            const options: any = {
+                method: 'POST',
+                headers: {
+                    'STARLIMSUser': config.user,
+                    'STARLIMSPass': config.pw
+                },
+                qs: {
+                    'ItemId': itemID
+                },
+                body: code
+            };
 
-        try {
-            result = await request(this.config.url  + '/SCM_API.SaveCode.lims', options);
-            vscode.window.showErrorMessage(result);
-        } catch (e) {
-            console.error(e);
-            vscode.window.showErrorMessage(e.error);
+            try {
+                result = await request(config.url  + '/SCM_API.SaveCode.lims', options);
+                vscode.window.showErrorMessage(result);
+            } catch (e) {
+                console.error(e);
+                vscode.window.showErrorMessage(e.error);
+            }
         }
 
         return result;
     }
     
-    public async checkin(itemType: string, itemID: string, reason: string) {
+    public async checkin(url: string, itemType: string, itemID: string, reason: string) {
         let result : any = null;
+        const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
         
+        if(config) {
         const options: any = {
-            method: 'GET',
-            headers: {
-                'STARLIMSUser': process.env.STARLIMS_USER,
-                'STARLIMSPass': process.env.STARLIMS_PASSWORD
-            },
-            qs: {
-                'ItemId': itemID,
-                'FileType': itemType,
-                'Reason': reason
-            },
-            json: true
-        };
+                method: 'GET',
+                headers: {
+                    'STARLIMSUser': config.user,
+                    'STARLIMSPass': config.pw
+                },
+                qs: {
+                    'ItemId': itemID,
+                    'FileType': itemType,
+                    'Reason': reason
+                },
+                json: true
+            };
 
-        try {
-            result = await request(this.config.url  + '/SCM_API.Checkin.lims', options);
-        } catch (e) {
-            console.error(e);
-            vscode.window.showErrorMessage(e.error);
+            try {
+                result = await request(config.url  + '/SCM_API.Checkin.lims', options);
+            } catch (e) {
+                console.error(e);
+                vscode.window.showErrorMessage(e.error);
+            }
         }
-
         return result;
     }
 
-    public async checkout(itemType: string, itemID: string) {
+    public async checkout(url: string, itemType: string, itemID: string) {
         let result : any = null;
+        const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
         
-        const options: any = {
-            method: 'GET',
-            headers: {
-                'STARLIMSUser': process.env.STARLIMS_USER,
-                'STARLIMSPass': process.env.STARLIMS_PASSWORD
-            },
-            qs: {
-                'ItemId': itemID,
-                'FileType': itemType
-            },
-            json: true
-        };
+        if(config) 
+        {
+            const options: any = {
+                method: 'GET',
+                headers: {
+                    'STARLIMSUser': config.user,
+                    'STARLIMSPass': config.pw
+                },
+                qs: {
+                    'ItemId': itemID,
+                    'FileType': itemType
+                },
+                json: true
+            };
 
-        try {
-            result = await request(this.config.url  + '/SCM_API.Checkout.lims', options);
-        } catch (e) {
-            console.error(e);
-            vscode.window.showErrorMessage(e.error);
+            try {
+                result = await request(config.url  + '/SCM_API.Checkout.lims', options);
+            } catch (e) {
+                console.error(e);
+                vscode.window.showErrorMessage(e.error);
+            }
         }
 
         return result;
@@ -139,7 +148,7 @@ export class EnterpriseService {
         return install;
     }
 
-    public async getEnterpriseItem(itemType: string, itemID: string, parentID: string, url: string) {
+    public async getEnterpriseItem(url: string, itemType: string, itemID: string, parentID: string) {
         const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
 
         let result : any = null;
@@ -170,57 +179,62 @@ export class EnterpriseService {
 
     public async getEntepriseItemCode(url: string, itemType: string, itemID: string) {
         let result : any = null;
+        const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
 
-        const options: any = {
-            method: 'GET',
-            headers: {
-                'STARLIMSUser': process.env.STARLIMS_USER,
-                'STARLIMSPass': process.env.STARLIMS_PASSWORD
-            },
-            qs: {
-                'ItemType': itemType,
-                'ItemID': itemID
-            },
-            json: true
-        };
+        if(config) {
+            const options: any = {
+                method: 'GET',
+                headers: {
+                    'STARLIMSUser': config.user,
+                    'STARLIMSPass': config.pw
+                },
+                qs: {
+                    'ItemType': itemType,
+                    'ItemID': itemID
+                },
+                json: true
+            };
 
-        try {
-            result = await request(url  + '/SCM_API.GetCode.lims', options);
+            try {
+                result = await request(url  + '/SCM_API.GetCode.lims', options);
 
-        } catch (e) {
-            console.error(e);
-            vscode.window.showErrorMessage(e.error);
-        }
+            } catch (e) {
+                console.error(e);
+                vscode.window.showErrorMessage(e.error);
+            }
 
-        return result;
-    }    
+            return result;
+        }    
+    }
 
-    public async getApplicationManifest(appID: string) {
+    public async getApplicationManifest(url:string, appID: string) {
         let result : any = null;
+        const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
 
-        const options: any = {
-            method: 'GET',
-            headers: {
-                'STARLIMSUser': process.env.STARLIMS_USER,
-                'STARLIMSPass': process.env.STARLIMS_PASSWORD
-            },
-            qs: {
-                'AppID': appID
-            },
-            json: true
-        };
+        if(config) {
+            const options: any = {
+                method: 'GET',
+                headers: {
+                    'STARLIMSUser': config.user,
+                    'STARLIMSPass': config.pw
+                },
+                qs: {
+                    'AppID': appID
+                },
+                json: true
+            };
 
-        try {
-            result = await request(this.config.url  + '/SCM_API.GetAppManifest.lims', options);
-        } catch (e) {
-            console.error(e);
-            vscode.window.showErrorMessage(e.error);
+            try {
+                result = await request(config.url  + '/SCM_API.GetAppManifest.lims', options);
+            } catch (e) {
+                console.error(e);
+                vscode.window.showErrorMessage(e.error);
+            }
         }
-
         return result;
     }
 
-    public async downloadApplication(app: any, folder: string) {
+    public async downloadApplication(url:string, app: any, folder: string) {
         // create a folder for the app
         let appFolder = path.join(folder, app.CategoryName, app.AppName);
         appFolder = appFolder.substring(1, appFolder.length);
@@ -255,7 +269,7 @@ export class EnterpriseService {
             await mkdirp(htmlFormsFolder);
 
             app.ServerScripts.forEach(async (ss: any) => {
-                let ssCode = await this.getEntepriseItemCode(EnterpriseItemType.AppServerScript, ss.ScriptID);
+                let ssCode = await this.getEntepriseItemCode(url, EnterpriseItemType.AppServerScript, ss.ScriptID);
                 let fileName = ss.ScriptName + (ss.Language === "STARLIMS" ? ".ssl" : ".txt");
                 try {
                     await fs.writeFileSync(path.join(ssFolder, fileName), ssCode.Code, {encoding: 'utf8'});
@@ -267,7 +281,7 @@ export class EnterpriseService {
             progress.report({ increment: 30, message: "Downloading application data sources..." });
 
             app.DataSources.forEach(async (ds: any) => {
-                let dsCode = await this.getEntepriseItemCode(EnterpriseItemType.AppDataSource, ds.ScriptID);
+                let dsCode = await this.getEntepriseItemCode(url, EnterpriseItemType.AppDataSource, ds.ScriptID);
                 let fileName = ds.ScriptName + (ds.Language === "STARLIMS" ? ".ssl" : ".sql");
                 try {
                     await fs.writeFileSync(path.join(dsFolder, fileName), dsCode.Code, {encoding: 'utf8'});
@@ -279,7 +293,7 @@ export class EnterpriseService {
             progress.report({ increment: 50, message: "Downloading application client scripts..." });
 
             app.ClientScripts.forEach(async (cs: any) => {
-                let csCode = await this.getEntepriseItemCode(EnterpriseItemType.AppClientScript, cs.ScriptID);
+                let csCode = await this.getEntepriseItemCode(url, EnterpriseItemType.AppClientScript, cs.ScriptID);
                 let fileName = cs.ScriptName + (cs.Language === "JSCRIPT" ? ".js" : ".txt");
                 try {
                     await fs.writeFileSync(path.join(csFolder, fileName), csCode.Code, {encoding: 'utf8'});
@@ -291,9 +305,9 @@ export class EnterpriseService {
             progress.report({ increment: 70, message: "Downloading application XFD forms..." });
 
             app.XFDForms.forEach(async (frm: any) => {
-                let frmCodeBehind = await this.getEntepriseItemCode(EnterpriseItemType.XFDFormCode, frm.FormID);
+                let frmCodeBehind = await this.getEntepriseItemCode(url, EnterpriseItemType.XFDFormCode, frm.FormID);
                 let codeBehindFileName = frm.FormName + '.js';
-                let frmXML = await this.getEntepriseItemCode(EnterpriseItemType.XFDFormXML, frm.FormID);
+                let frmXML = await this.getEntepriseItemCode(url, EnterpriseItemType.XFDFormXML, frm.FormID);
                 let xmlFileName = frm.FormName + '.xml';
                 try {
                     await fs.writeFileSync(path.join(xfdFormsFolder, codeBehindFileName), frmCodeBehind.Code, {encoding: 'utf8'});
@@ -306,9 +320,9 @@ export class EnterpriseService {
             progress.report({ increment: 90, message: "Downloading application HTML forms..." });
 
             app.HTMLForms.forEach(async (frm: any) => {
-                let frmCodeBehind = await this.getEntepriseItemCode(EnterpriseItemType.HTMLFormCode, frm.FormID);
+                let frmCodeBehind = await this.getEntepriseItemCode(url, EnterpriseItemType.HTMLFormCode, frm.FormID);
                 let codeBehindFileName = frm.FormName + '.js';
-                let frmXML = await this.getEntepriseItemCode(EnterpriseItemType.HTMLFormXML, frm.FormID);
+                let frmXML = await this.getEntepriseItemCode(url, EnterpriseItemType.HTMLFormXML, frm.FormID);
                 let xmlFileName = frm.FormName + '.xml';
                 try {
                     await fs.writeFileSync(path.join(htmlFormsFolder, codeBehindFileName), frmCodeBehind.Code, {encoding: 'utf8'});
