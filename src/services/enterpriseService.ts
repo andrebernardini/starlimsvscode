@@ -133,7 +133,7 @@ export class EnterpriseService {
                     prompt: `Enter user for installation '${url}'`,
                     password: false,
                     ignoreFocusOut: true
-                })??null;
+                })||null;
             } 
 
             if(!install.pw) {
@@ -141,7 +141,7 @@ export class EnterpriseService {
                     prompt: `Enter password for installation '${url}'`,
                     password: true,
                     ignoreFocusOut: true
-                })??null;
+                })||null;
             } 
         }
 
