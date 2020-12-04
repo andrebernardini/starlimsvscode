@@ -34,13 +34,15 @@ export async function activate(context: vscode.ExtensionContext) {
 
                 // open code in new document
                 const fileExtension = '.' + (result.Language !== undefined && result.Language !== '' ? result.Language.toLowerCase() : 'txt');
-                const newFile = vscode.Uri.parse(storagePath + fileExtension);
+                const newFile = vscode.Uri.file(storagePath + fileExtension);
+                const edit = new vscode.WorkspaceEdit();
+                edit.createFile(newFile, {ignoreIfExists: true});
+                vscode.workspace.applyEdit(edit);
                 
                 let document = await vscode.workspace.openTextDocument(newFile);
                 if(document.getText().length === 0) {
                     enterpriseService.updateFileInfo(storagePath, item.url, item.enterpriseId);
                     
-                    const edit = new vscode.WorkspaceEdit();
                     edit.insert(newFile, new vscode.Position(0, 0), result.Code);
                     if (! await vscode.workspace.applyEdit(edit)) {
                         vscode.window.showTextDocument(document);
