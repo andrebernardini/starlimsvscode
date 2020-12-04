@@ -84,7 +84,7 @@
                         "type": "string",
                         "description": "The local directory that will contain all working copies"
                     },
-                    "STARLIMS.intallations": {
+                    "STARLIMS.installations": {
                         "type": "array",
                         "items": {
                             "type": "object",

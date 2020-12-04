@@ -30,7 +30,7 @@ export async function activate(context: vscode.ExtensionContext) {
                 vscode.window.showInformationMessage('Error! You need to have a folder open in your workspace.');
             } else {
                 storagePath = wsFolders[0].uri.fsPath;
-                path.join(storagePath, result.FullPath);
+                storagePath = path.join(storagePath, result.FullPath);
 
                 // open code in new document
                 const fileExtension = '.' + (result.Language !== undefined && result.Language !== '' ? result.Language.toLowerCase() : 'txt');

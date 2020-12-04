@@ -19,55 +19,53 @@ export class EnterpriseTreeDataProvider implements vscode.TreeDataProvider<TreeE
 
     public async getChildren(element?: TreeEnterpriseItem): Promise<TreeEnterpriseItem[]> {
         const enterpriseTreeItems: TreeEnterpriseItem[] = [];
-        let config: Map<string, STARLIMSInstall>;
-        if(process.env['STARLIMS_Credentials']) {
-            config = JSON.parse(process.env['STARLIMS_Credentials']);
+        let config: Map<string, STARLIMSInstall> = await this.service.getInstallationConfigs();
         
-            if(!element) {
-                config.forEach(install => {
-                    const itemType: EnterpriseItemType = EnterpriseItemType.Server;
-                    const itemId: string = install.url;
-                    const parentId: string = '';
-                    const label : string = install.url;
-                    const collapsibleState = vscode.TreeItemCollapsibleState.Collapsed;
-                    const url : string = install.url;
-                    const enterpriseItem : TreeEnterpriseItem = new TreeEnterpriseItem(itemType, label, itemId, parentId, collapsibleState, url);
-                    enterpriseItem.command = {
-                        command: 'STARLIMS.selectEnterpriseItem',
-                        title: 'Select Node',
-                        arguments: [enterpriseItem]
-                    };
-                    enterpriseItem.contextValue = itemType;
-                    enterpriseTreeItems.push(enterpriseItem);
-                });
-                
-            }
-            else {
-                const bTopLevel = element.type === EnterpriseItemType.Server;
-                const itemType: EnterpriseItemType = !bTopLevel ? element.type : EnterpriseItemType.EnterpriseCategory;
-                const itemId: string = !bTopLevel ? element.enterpriseId : '';
-                const parentId: string = !bTopLevel ? element.parentEnterpriseId : '';
-                const url : string = element.url;
-
-                const enterpriseItems : any [] = await this.service.getEnterpriseItem(itemType, itemId, parentId, url);
-
-                enterpriseItems.forEach((item: any) => {
-                    const enterpriseTreeItem = new TreeEnterpriseItem(item.Type, item.Name, item.ID, item.ParentID,
-                        item.IsFolder ? vscode.TreeItemCollapsibleState.Collapsed : vscode.TreeItemCollapsibleState.None,
-                        element.url);
-                    enterpriseTreeItem.command = {
-                        command: 'STARLIMS.selectEnterpriseItem',
-                        title: 'Select Node',
-                        arguments: [enterpriseTreeItem],
-                    };
-                    enterpriseTreeItem.contextValue = item.Type;
-                    enterpriseTreeItem.iconPath = item.IsFolder ? vscode.ThemeIcon.Folder : vscode.ThemeIcon.File;
-                    
-
-                    enterpriseTreeItems.push(enterpriseTreeItem);
-                });
-            }
+        if(!element) {
+            config.forEach(install => {
+                const itemType: EnterpriseItemType = EnterpriseItemType.Server;
+                const itemId: string = install.url;
+                const parentId: string = '';
+                const label : string = install.url;
+                const collapsibleState = vscode.TreeItemCollapsibleState.Collapsed;
+                const url : string = install.url;
+                const enterpriseItem : TreeEnterpriseItem = new TreeEnterpriseItem(itemType, label, itemId, parentId, collapsibleState, url);
+                enterpriseItem.command = {
+                    command: 'STARLIMS.selectEnterpriseItem',
+                    title: 'Select Node',
+                    arguments: [enterpriseItem]
+                };
+                enterpriseItem.contextValue = itemType;
+                enterpriseTreeItems.push(enterpriseItem);
+            });
+            
         }
+        else {
+            const bTopLevel = element.type === EnterpriseItemType.Server;
+            const itemType: EnterpriseItemType = !bTopLevel ? element.type : EnterpriseItemType.EnterpriseCategory;
+            const itemId: string = !bTopLevel ? element.enterpriseId : '';
+            const parentId: string = !bTopLevel ? element.parentEnterpriseId : '';
+            const url : string = element.url;
+
+            const enterpriseItems : any [] = await this.service.getEnterpriseItem(url, itemType, itemId, parentId);
+
+            enterpriseItems.forEach((item: any) => {
+                const enterpriseTreeItem = new TreeEnterpriseItem(item.Type, item.Name, item.ID, item.ParentID,
+                    item.IsFolder ? vscode.TreeItemCollapsibleState.Collapsed : vscode.TreeItemCollapsibleState.None,
+                    element.url);
+                enterpriseTreeItem.command = {
+                    command: 'STARLIMS.selectEnterpriseItem',
+                    title: 'Select Node',
+                    arguments: [enterpriseTreeItem],
+                };
+                enterpriseTreeItem.contextValue = item.Type;
+                enterpriseTreeItem.iconPath = item.IsFolder ? vscode.ThemeIcon.Folder : vscode.ThemeIcon.File;
+                
+
+                enterpriseTreeItems.push(enterpriseTreeItem);
+            });
+        }
+        
         
         return enterpriseTreeItems;
     }

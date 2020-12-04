@@ -98,7 +98,7 @@ export class EnterpriseService {
     
     constructor (globalState : vscode.Memento) {
         const config = vscode.workspace.getConfiguration("STARLIMS");
-        const installations: object[] | undefined = config.get('installations');
+        const installations = config.get<object[]>("installations");
         this.config = new Map<string, STARLIMSInstall>();
         this.globalState = globalState;
         if(installations) {
@@ -120,6 +120,10 @@ export class EnterpriseService {
 
     private async getFileInfo(path:string) : Promise<any> {
         return this.globalState.get<any>("oFileInfo")[path];
+    }
+
+    public async getInstallationConfigs() {
+        return this.config;
     }
 
     private async getInstallationConfig(url:string) : Promise<STARLIMSInstall | null>{
