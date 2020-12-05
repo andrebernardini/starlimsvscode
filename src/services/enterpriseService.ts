@@ -35,7 +35,7 @@ export class EnterpriseService {
     }
 
     public async execute(url: string, itemID: string) {
-        let result : any = null;
+        let result : string = "";
         const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
         
         if(config) {
@@ -48,18 +48,24 @@ export class EnterpriseService {
                 qs: {
                     'ItemId': itemID
                 },
-                json: true
+                json: false
             };
 
             try {
+                config.outputChannel.appendLine("___________________________________________________________________________");
+                config.outputChannel.appendLine(new Date().toISOString());
                 result = await request(config.url  + '/SCM_API.Execute.lims', options);
-                let output = vscode.window.createOutputChannel(config.name);
-                output.append(result);
-                output.show(true);
+                if(result.match(/starthtml/)) {
+                    vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(config.url + result));
+                    
+                }
+                config.outputChannel.append(result);
             } catch (e) {
-                console.error(e);
-                vscode.window.showErrorMessage(e.error);
+                config.outputChannel.append(e.error);
             }
+
+            config.outputChannel.show(true);
+            config.outputChannel.appendLine("");
         }
         return result;
     }
@@ -397,11 +403,13 @@ export class STARLIMSInstall {
     name: string;
     user: string|null;
     pw: string|null;
+    outputChannel: vscode.OutputChannel;
 
     constructor(url:string, name:string, user:string|null, pw:string|null) {
         this.url = url;
         this.name = name;
         this.user = user;
         this.pw = pw;
+        this.outputChannel = vscode.window.createOutputChannel(name);
     }
 }
