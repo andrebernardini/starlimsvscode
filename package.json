@@ -88,10 +88,6 @@
                 "type": "object",
                 "title": "STARLIMS VSCode Configuration",
                 "properties": {
-                    "STARLIMS.basedir": {
-                        "type": "string",
-                        "description": "The local directory that will contain all working copies"
-                    },
                     "STARLIMS.installations": {
                         "type": "array",
                         "items": {
