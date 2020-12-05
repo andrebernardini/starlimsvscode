@@ -31,17 +31,31 @@ export async function activate(context: vscode.ExtensionContext) {
             } else {
                 storagePath = wsFolders[0].uri.fsPath;
                 const install : STARLIMSInstall|null= await enterpriseService.getInstallationConfig(item.url);
-                storagePath = path.join(
-                    storagePath, 
-                    install?install.name:"unknown installation",
-                    result.FullPath);
-
+                if(result.Application) {
+                    storagePath = path.join(
+                        storagePath, 
+                        install?install.name:"unknown installation",
+                        "Applications",
+                        result.Category,
+                        result.Application,
+                        result.Type,
+                        result.Name
+                        );
+                } else {
+                    storagePath = path.join(
+                        storagePath, 
+                        install?install.name:"unknown installation",
+                        result.Type,
+                        result.Category,
+                        result.Name
+                        );
+                }
+                
                 // open code in new document
                 const fileExtension = '.' + (result.Language !== undefined && result.Language !== '' ? result.Language.toLowerCase() : 'txt');
                 const newFile = vscode.Uri.file(storagePath + fileExtension);
                 const edit : vscode.WorkspaceEdit = new vscode.WorkspaceEdit();
                 edit.createFile(newFile, {ignoreIfExists: true});
-                
                 edit.replace(newFile, new vscode.Range(0, 0, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER), result.Code);
                 enterpriseService.updateFileInfo(storagePath, item.url, item.enterpriseId);
 
