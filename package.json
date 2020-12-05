@@ -40,6 +40,10 @@
                 }
             },
             {
+                "command": "STARLIMS.Execute",
+                "title": "Execute Starlims Item"
+            },
+            {
                 "command": "STARLIMS.Checkout",
                 "title": "Checkout Starlims Item"
             },
@@ -61,6 +65,10 @@
                 {
                     "command": "STARLIMS.refresh",
                     "when": "view == STARLIMS"
+                },
+                {
+                    "command": "STARLIMS.Execute",
+                    "when": "view == STARLIMS && viewItem == HTMLFORMCODE  || view == STARLIMS && viewItem == HTMLFORMXML  || view == STARLIMS && viewItem == XFDFORMCODE  || view == STARLIMS && viewItem == XFDFORMXML  || view == STARLIMS && viewItem == SS  || view == STARLIMS && viewItem == DS  || view == STARLIMS && viewItem == CS|| view == STARLIMS && viewItem == APPSS  || view == STARLIMS && viewItem == APPDS  || view == STARLIMS && viewItem == APPCS"
                 },
                 {
                     "command": "STARLIMS.Checkout",

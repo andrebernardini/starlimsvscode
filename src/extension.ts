@@ -88,6 +88,24 @@ export async function activate(context: vscode.ExtensionContext) {
         }
     });
 
+    vscode.commands.registerCommand('STARLIMS.Execute', async (item: TreeEnterpriseItem) => {
+        if(item) {
+            await enterpriseService.execute(item.url, item.enterpriseId);
+        } else {
+            let activeEditor : vscode.TextEditor|undefined = vscode.window.activeTextEditor;
+            if(activeEditor !== undefined) {
+                let sFileName : string = activeEditor.document.uri.fsPath;
+                const fileInfo : any= await enterpriseService.getFileInfo(sFileName);
+                
+                if(fileInfo) {
+                    await enterpriseService.execute(fileInfo.url, fileInfo.id);
+                } else {
+                    vscode.window.showInformationMessage("Cannot execute: could not find mapping for this item.");
+                }
+            }
+        }
+    });
+
     vscode.commands.registerCommand('STARLIMS.Checkout', async (item: TreeEnterpriseItem) => {
         if(item) {
             await enterpriseService.checkout(item.url, item.enterpriseId);

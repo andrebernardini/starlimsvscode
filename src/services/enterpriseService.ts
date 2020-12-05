@@ -33,6 +33,36 @@ export class EnterpriseService {
 
         return result;
     }
+
+    public async execute(url: string, itemID: string) {
+        let result : any = null;
+        const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
+        
+        if(config) {
+        const options: any = {
+                method: 'GET',
+                headers: {
+                    'STARLIMSUser': config.user,
+                    'STARLIMSPass': config.pw
+                },
+                qs: {
+                    'ItemId': itemID
+                },
+                json: true
+            };
+
+            try {
+                result = await request(config.url  + '/SCM_API.Execute.lims', options);
+                let output = vscode.window.createOutputChannel(config.name);
+                output.append(result);
+                output.show(true);
+            } catch (e) {
+                console.error(e);
+                vscode.window.showErrorMessage(e.error);
+            }
+        }
+        return result;
+    }
     
     public async checkin(url: string, itemID: string, reason: string) {
         let result : any = null;
