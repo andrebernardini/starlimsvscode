@@ -1,8 +1,14 @@
 {
-    "Add subscription": {
+    "ExecFunction": {
         "scope": "SSL",
         "prefix": "execfunction",
         "body": "ExecFunction('${1:category}.${2:scriptname}', {${3:arguments}});",
         "description": "Call another SL script"
+    },
+    "DoProc": {
+        "scope": "SSL",
+        "prefix": "doproc",
+        "body": "DoProc('${1:category}.${2:scriptname}.${3:procedure}', {${4:arguments}});",
+        "description": "Call another SL procedure"
     }
 }
