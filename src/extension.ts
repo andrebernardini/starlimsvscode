@@ -119,6 +119,14 @@ export async function activate(context: vscode.ExtensionContext) {
             }
         }
     });
+
+    vscode.workspace.onDidSaveTextDocument((document:vscode.TextDocument) => {
+        if(document.uri.scheme === "file") {
+            if(enterpriseService.getFileInfo(document.uri.fsPath)) {
+                vscode.commands.executeCommand("STARLIMS.save");
+            }
+        }
+    });
 }
 
 // this method is called when your extension is deactivated
