@@ -29,7 +29,7 @@ export class EnterpriseTreeDataProvider implements vscode.TreeDataProvider<TreeE
                 const label : string = install.url;
                 const collapsibleState = vscode.TreeItemCollapsibleState.Collapsed;
                 const url : string = install.url;
-                const enterpriseItem : TreeEnterpriseItem = new TreeEnterpriseItem(itemType, label, itemId, parentId, collapsibleState, url);
+                const enterpriseItem : TreeEnterpriseItem = new TreeEnterpriseItem(itemType, label, itemId, parentId, collapsibleState, url, "");
                 enterpriseItem.command = {
                     command: 'STARLIMS.selectEnterpriseItem',
                     title: 'Select Node',
@@ -52,7 +52,7 @@ export class EnterpriseTreeDataProvider implements vscode.TreeDataProvider<TreeE
             enterpriseItems.forEach((item: any) => {
                 const enterpriseTreeItem = new TreeEnterpriseItem(item.Type, item.Name, item.ID, item.ParentID,
                     item.IsFolder ? vscode.TreeItemCollapsibleState.Collapsed : vscode.TreeItemCollapsibleState.None,
-                    element.url);
+                    element.url, item.CheckedOutBy);
                 enterpriseTreeItem.command = {
                     command: 'STARLIMS.selectEnterpriseItem',
                     title: 'Select Node',
@@ -60,8 +60,6 @@ export class EnterpriseTreeDataProvider implements vscode.TreeDataProvider<TreeE
                 };
                 enterpriseTreeItem.contextValue = item.Type;
                 enterpriseTreeItem.iconPath = item.IsFolder ? vscode.ThemeIcon.Folder : vscode.ThemeIcon.File;
-                
-
                 enterpriseTreeItems.push(enterpriseTreeItem);
             });
         }
@@ -81,6 +79,7 @@ export class TreeEnterpriseItem extends vscode.TreeItem {
     enterpriseId: string;
     parentEnterpriseId : string;
     url: string;
+    checkedOutBy: string;
 
     constructor(
         type: EnterpriseItemType,
@@ -89,14 +88,17 @@ export class TreeEnterpriseItem extends vscode.TreeItem {
         parentId: string,
         collapsibleState: vscode.TreeItemCollapsibleState,
         url: string,
-        command?: vscode.Command
+        checkedOutBy: string
     ) {
+        if(checkedOutBy) {
+            label += ` (${checkedOutBy})`;
+        }
         super(label, collapsibleState);
         this.type = type;
-        this.command = command;
         this.enterpriseId = id;
         this.parentEnterpriseId = parentId;
         this.url = url;
+        this.checkedOutBy = checkedOutBy;
     }
 }
 
