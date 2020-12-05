@@ -126,7 +126,7 @@ export class EnterpriseService {
         return this.config;
     }
 
-    private async getInstallationConfig(url:string) : Promise<STARLIMSInstall | null>{
+    public async getInstallationConfig(url:string) : Promise<STARLIMSInstall | null>{
         const install : STARLIMSInstall|undefined = this.config.get(url);
         if(!install) { 
             return null;

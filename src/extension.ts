@@ -4,7 +4,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import { EnterpriseTreeDataProvider, TreeEnterpriseItem } from './enterpriseProvider';
-import { EnterpriseService } from './services/enterpriseService';
+import { EnterpriseService, STARLIMSInstall } from './services/enterpriseService';
 
 
 // this method is called when your extension is activated
@@ -30,38 +30,27 @@ export async function activate(context: vscode.ExtensionContext) {
                 vscode.window.showInformationMessage('Error! You need to have a folder open in your workspace.');
             } else {
                 storagePath = wsFolders[0].uri.fsPath;
-                storagePath = path.join(storagePath, result.FullPath);
+                const install : STARLIMSInstall|null= await enterpriseService.getInstallationConfig(item.url);
+                storagePath = path.join(
+                    storagePath, 
+                    install?install.name:"unknown installation",
+                    result.FullPath);
 
                 // open code in new document
                 const fileExtension = '.' + (result.Language !== undefined && result.Language !== '' ? result.Language.toLowerCase() : 'txt');
                 const newFile = vscode.Uri.file(storagePath + fileExtension);
-                const edit = new vscode.WorkspaceEdit();
+                const edit : vscode.WorkspaceEdit = new vscode.WorkspaceEdit();
                 edit.createFile(newFile, {ignoreIfExists: true});
-                vscode.workspace.applyEdit(edit);
                 
-                let document = await vscode.workspace.openTextDocument(newFile);
-                if(document.getText().length === 0) {
-                    enterpriseService.updateFileInfo(storagePath, item.url, item.enterpriseId);
-                    
-                    edit.insert(newFile, new vscode.Position(0, 0), result.Code);
-                    if (! await vscode.workspace.applyEdit(edit)) {
-                        vscode.window.showTextDocument(document);
-                    } else {
-                        vscode.window.showInformationMessage('Error!');
-                    }
-                } else {
-                    var firstLine = document.lineAt(0);
-                    var lastLine = document.lineAt(document.lineCount - 1);
-                    var textRange = new vscode.Range(firstLine.range.start, lastLine.range.end);
-                    const edit = new vscode.WorkspaceEdit();
-                    edit.replace(newFile, textRange, result.Code);
-                    vscode.window.showTextDocument(document);
+                edit.replace(newFile, new vscode.Range(0, 0, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER), result.Code);
+                enterpriseService.updateFileInfo(storagePath, item.url, item.enterpriseId);
 
-                    if (! await vscode.workspace.applyEdit(edit)) {
-                        vscode.window.showTextDocument(document);
-                    } else {
-                        vscode.window.showInformationMessage('Error!');
-                    }
+                if (await vscode.workspace.applyEdit(edit)) {
+                    const document = await vscode.workspace.openTextDocument(newFile);
+                    await document.save();
+                    vscode.window.showTextDocument(document);
+                } else {
+                    vscode.window.showInformationMessage('Error!');
                 }
             }
         }
