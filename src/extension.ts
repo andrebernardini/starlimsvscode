@@ -57,7 +57,7 @@ export async function activate(context: vscode.ExtensionContext) {
                 const edit : vscode.WorkspaceEdit = new vscode.WorkspaceEdit();
                 edit.createFile(newFile, {ignoreIfExists: true});
                 edit.replace(newFile, new vscode.Range(0, 0, Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER), result.Code);
-                enterpriseService.updateFileInfo(storagePath, item.url, item.enterpriseId);
+                enterpriseService.updateFileInfo(newFile.fsPath, item.url, item.enterpriseId);
 
                 if (await vscode.workspace.applyEdit(edit)) {
                     const document = await vscode.workspace.openTextDocument(newFile);
@@ -106,13 +106,17 @@ export async function activate(context: vscode.ExtensionContext) {
     });
 
     vscode.commands.registerCommand('STARLIMS.save', async (item: TreeEnterpriseItem) => {
-        let activeEditor : any = vscode.window.activeTextEditor;
+        let activeEditor : vscode.TextEditor|undefined = vscode.window.activeTextEditor;
         if(activeEditor !== undefined) {
-            let sFileName : any = activeEditor.document.fileName;
-            let sCode : any = activeEditor.document.getText();
-            sFileName = path.basename(sFileName);
-            sFileName = sFileName.substr(0, sFileName.lastIndexOf('.'));
-            await enterpriseService.save(item.url, sFileName, sCode);
+            let sFileName : string = activeEditor.document.uri.fsPath;
+            let sCode : string = activeEditor.document.getText();
+            const fileInfo : any= await enterpriseService.getFileInfo(sFileName);
+            
+            if(fileInfo) {
+                await enterpriseService.save(fileInfo.url, fileInfo.id, sCode);
+            } else {
+                vscode.window.showInformationMessage("Cannot save to server: could not find mapping for this item.");
+            }
         }
     });
 }

@@ -118,7 +118,7 @@ export class EnterpriseService {
         this.globalState.update('oFileInfo', oFileInfo);
     }
 
-    private async getFileInfo(path:string) : Promise<any> {
+    public async getFileInfo(path:string) : Promise<any> {
         return this.globalState.get<any>("oFileInfo")[path];
     }
 
