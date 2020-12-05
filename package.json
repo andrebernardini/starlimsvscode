@@ -18,6 +18,12 @@
     ],
     "main": "./out/extension",
     "contributes": {
+        "snippets": [
+            {
+                "language": "SSL",
+                "path": "./snippets/serverfunctions.json"
+            }
+        ],
         "views": {
             "explorer": [
                 {

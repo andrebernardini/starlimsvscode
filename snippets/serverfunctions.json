@@ -1,0 +1,8 @@
+{
+    "Add subscription": {
+        "scope": "SSL",
+        "prefix": "execfunction",
+        "body": "ExecFunction('${1:category}.${2:scriptname}', {${3:arguments}});",
+        "description": "Call another SL script"
+    }
+}
