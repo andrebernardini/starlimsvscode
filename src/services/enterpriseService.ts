@@ -34,7 +34,7 @@ export class EnterpriseService {
         return result;
     }
     
-    public async checkin(url: string, itemType: string, itemID: string, reason: string) {
+    public async checkin(url: string, itemID: string, reason: string) {
         let result : any = null;
         const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
         
@@ -47,7 +47,6 @@ export class EnterpriseService {
                 },
                 qs: {
                     'ItemId': itemID,
-                    'FileType': itemType,
                     'Reason': reason
                 },
                 json: true
@@ -63,7 +62,7 @@ export class EnterpriseService {
         return result;
     }
 
-    public async checkout(url: string, itemType: string, itemID: string) {
+    public async checkout(url: string, itemID: string) {
         let result : any = null;
         const config : STARLIMSInstall|null = await this.getInstallationConfig(url);
         
@@ -76,8 +75,7 @@ export class EnterpriseService {
                     'STARLIMSPass': config.pw
                 },
                 qs: {
-                    'ItemId': itemID,
-                    'FileType': itemType
+                    'ItemId': itemID
                 },
                 json: true
             };

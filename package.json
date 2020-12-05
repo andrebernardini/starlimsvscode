@@ -29,11 +29,11 @@
         "commands": [
             {
                 "command": "STARLIMS.downloadApp",
-                "title": "Download App"
+                "title": "Download Starlims App"
             },
             {
                 "command": "STARLIMS.refresh",
-                "title": "Refresh",
+                "title": "Refresh Starlims Tree",
                 "icon": {
                     "light": "resources/light/refresh.svg",
                     "dark": "resources/dark/refresh.svg"
@@ -41,15 +41,15 @@
             },
             {
                 "command": "STARLIMS.Checkout",
-                "title": "Checkout"
+                "title": "Checkout Starlims Item"
             },
             {
                 "command": "STARLIMS.Checkin",
-                "title": "Checkin"
+                "title": "Checkin Starlims Item"
             },
             {
                 "command": "STARLIMS.save",
-                "title": "Save To Server"
+                "title": "Save To Server Starlims Item"
             }
         ],
         "menus": {

@@ -89,7 +89,21 @@ export async function activate(context: vscode.ExtensionContext) {
     });
 
     vscode.commands.registerCommand('STARLIMS.Checkout', async (item: TreeEnterpriseItem) => {
-        await enterpriseService.checkout(item.url, item.type, item.enterpriseId);
+        if(item) {
+            await enterpriseService.checkout(item.url, item.enterpriseId);
+        } else {
+            let activeEditor : vscode.TextEditor|undefined = vscode.window.activeTextEditor;
+            if(activeEditor !== undefined) {
+                let sFileName : string = activeEditor.document.uri.fsPath;
+                const fileInfo : any= await enterpriseService.getFileInfo(sFileName);
+                
+                if(fileInfo) {
+                    await enterpriseService.checkout(fileInfo.url, fileInfo.id);
+                } else {
+                    vscode.window.showInformationMessage("Cannot checkout: could not find mapping for this item.");
+                }
+            }
+        }
     });
 
     vscode.commands.registerCommand('STARLIMS.Checkin', async (item: TreeEnterpriseItem) => {
@@ -98,7 +112,21 @@ export async function activate(context: vscode.ExtensionContext) {
             ignoreFocusOut: true,
         })||'';
        
-        await enterpriseService.checkin(item.url, item.type, item.enterpriseId, checkinReason);
+        if(item) {
+            await enterpriseService.checkin(item.url, item.enterpriseId, checkinReason);
+        } else {
+            let activeEditor : vscode.TextEditor|undefined = vscode.window.activeTextEditor;
+            if(activeEditor !== undefined) {
+                let sFileName : string = activeEditor.document.uri.fsPath;
+                const fileInfo : any= await enterpriseService.getFileInfo(sFileName);
+                
+                if(fileInfo) {
+                    await enterpriseService.checkin(fileInfo.url, fileInfo.id, checkinReason);
+                } else {
+                    vscode.window.showInformationMessage("Cannot checkin: could not find mapping for this item.");
+                }
+            }
+        }
     });
 
     vscode.commands.registerCommand('STARLIMS.refresh', async (item: TreeEnterpriseItem) => {
