@@ -147,8 +147,16 @@ export class EnterpriseService {
     }
 
     public async updateFileInfo(path:string, url:string, id:string) : Promise<void> {
-        const oFileInfo :any = this.globalState.get("oFileInfo");
-        oFileInfo[path] = {'url':url, 'id':id};
+        const oFileInfo : any = this.globalState.get("oFileInfo");
+        if(oFileInfo) {
+            for(var sProp in oFileInfo) {
+                if(!fs.existsSync(sProp)) {
+                    delete oFileInfo[sProp];
+                }
+            }
+            oFileInfo[path] = {'url':url, 'id':id};
+        }
+
         this.globalState.update('oFileInfo', oFileInfo);
     }
 
