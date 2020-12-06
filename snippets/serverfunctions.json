@@ -10,5 +10,10 @@
         "prefix": "doproc",
         "body": "DoProc('${1:category}.${2:scriptname}.${3:procedure}', {${4:arguments}});",
         "description": "Call another SL procedure"
+    },
+    "GetDataSet": {
+        "scope": "SSL",
+        "prefix": "getdataset",
+        "body": "GetDataSet('${1:category}.${2:scriptname}', {${3:arguments}});"
     }
 }
