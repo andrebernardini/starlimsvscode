@@ -1,1612 +1,1611 @@
 {
 	"aadd": {
-		"body": "aadd(${1:target}, ${2:element})",
+		"body": "aadd(${1:target (Array)}, ${2:element (Value)})",
 		"prefix": "aadd",
 		"scope": "SSL"
 	},
 	"Abs": {
-		"body": "Abs(${1:numericValue})",
+		"body": "Abs(${1:numericValue (Double)})",
 		"prefix": "Abs",
 		"scope": "SSL"
 	},
 	"AddColDelimiters": {
-		"body": "AddColDelimiters(${1:dsn}, ${2:cols}, ${3:table})",
+		"body": "AddColDelimiters(${1:dsn (String)}, ${2:cols (Array)}, ${3:table (String)})",
 		"prefix": "AddColDelimiters",
 		"scope": "SSL"
 	},
 	"AddNameDelimiters": {
-		"body": "AddNameDelimiters(${1:dsn}, ${2:name})",
+		"body": "AddNameDelimiters(${1:dsn (String)}, ${2:name (String)})",
 		"prefix": "AddNameDelimiters",
 		"scope": "SSL"
 	},
 	"AddProperty": {
-		"body": "AddProperty(${1:o}, ${2:propName})",
+		"body": "AddProperty(${1:o (Object)}, ${2:propName (Value)})",
 		"prefix": "AddProperty",
 		"scope": "SSL"
 	},
 	"AddToApplication": {
-		"body": "AddToApplication(${1:key}, ${2:value})",
+		"body": "AddToApplication(${1:key (String)}, ${2:value (Value)})",
 		"prefix": "AddToApplication",
 		"scope": "SSL"
 	},
 	"AddToSession": {
-		"body": "AddToSession(${1:key}, ${2:value})",
+		"body": "AddToSession(${1:key (String)}, ${2:value (Value)})",
 		"prefix": "AddToSession",
 		"scope": "SSL"
 	},
 	"aeval": {
-		"body": "aeval(${1:target}, ${2:codeBlock}, ${3:start}, ${4:count})",
+		"body": "aeval(${1:target (Array)}, ${2:codeBlock (Function)}, ${3:start (Double)}, ${4:count (Double)})",
 		"prefix": "aeval",
 		"scope": "SSL"
 	},
 	"aevala": {
-		"body": "aevala(${1:target}, ${2:codeBlock}, ${3:start}, ${4:count})",
+		"body": "aevala(${1:target (Array)}, ${2:codeBlock (Function)}, ${3:start (Double)}, ${4:count (Double)})",
 		"prefix": "aevala",
 		"scope": "SSL"
 	},
 	"afill": {
-		"body": "afill(${1:target}, ${2:value}, ${3:start}, ${4:count})",
+		"body": "afill(${1:target (Array)}, ${2:value (Value)}, ${3:start (Double)}, ${4:count (Double)})",
 		"prefix": "afill",
 		"scope": "SSL"
 	},
 	"alen": {
-		"body": "alen(${1:target})",
+		"body": "alen(${1:target (Array)})",
 		"prefix": "alen",
 		"scope": "SSL"
 	},
 	"AllTrim": {
-		"body": "AllTrim(${1:source})",
+		"body": "AllTrim(${1:source (String)})",
 		"prefix": "AllTrim",
 		"scope": "SSL"
 	},
 	"arraycalc": {
-		"body": "arraycalc(${1:target}, ${2:operation}, ${3:value}, ${4:start}, ${5:count})",
+		"body": "arraycalc(${1:target (Array)}, ${2:operation (String)}, ${3:value (Value)}, ${4:start (Double)}, ${5:count (Double)})",
 		"prefix": "arraycalc",
 		"scope": "SSL"
 	},
 	"arraynew": {
-		"body": "arraynew(${1:dim1}, ${2:dim2}, ${3:dim3})",
+		"body": "arraynew(${1:dim1 (Double)}, ${2:dim2 (Double)}, ${3:dim3 (Double)})",
 		"prefix": "arraynew",
 		"scope": "SSL"
 	},
 	"ArrayToTVP": {
-		"body": "ArrayToTVP(${1:values}, ${2:dataType}, ${3:connectionName})",
+		"body": "ArrayToTVP(${1:values (Value)}, ${2:dataType (Value)}, ${3:connectionName (Value)})",
 		"prefix": "ArrayToTVP",
 		"scope": "SSL"
 	},
 	"Asc": {
-		"body": "Asc(${1:source})",
+		"body": "Asc(${1:source (String)})",
 		"prefix": "Asc",
 		"scope": "SSL"
 	},
 	"ascan": {
-		"body": "ascan(${1:target}, ${2:value}, ${3:start}, ${4:count})",
+		"body": "ascan(${1:target (Array)}, ${2:value (Value)}, ${3:start (Double)}, ${4:count (Double)})",
 		"prefix": "ascan",
 		"scope": "SSL"
 	},
 	"ascanexact": {
-		"body": "ascanexact(${1:target}, ${2:value}, ${3:start}, ${4:count})",
+		"body": "ascanexact(${1:target (Array)}, ${2:value (Value)}, ${3:start (Double)}, ${4:count (Double)})",
 		"prefix": "ascanexact",
 		"scope": "SSL"
 	},
 	"At": {
-		"body": "At(${1:subString}, ${2:source})",
+		"body": "At(${1:subString (String)}, ${2:source (String)})",
 		"prefix": "At",
 		"scope": "SSL"
 	},
 	"BeginLimsTransaction": {
-		"body": "BeginLimsTransaction(${1:friendlyName}, ${2:isoLevel})",
+		"body": "BeginLimsTransaction(${1:friendlyName (Value)}, ${2:isoLevel (Value)})",
 		"prefix": "BeginLimsTransaction",
 		"scope": "SSL"
 	},
 	"buildarray": {
-		"body": "buildarray(${1:text}, ${2:crlfOk}, ${3:delimiter}, ${4:unique}, ${5:trimSpaces})",
+		"body": "buildarray(${1:text (String)}, ${2:crlfOk (Bool)}, ${3:delimiter (String)}, ${4:unique (Bool)}, ${5:trimSpaces (Bool)})",
 		"prefix": "buildarray",
 		"scope": "SSL"
 	},
 	"buildarray2": {
-		"body": "buildarray2(${1:text}, ${2:lineDelimiter}, ${3:colDelimiter}, ${4:crlfOk}, ${5:trimSpaces})",
+		"body": "buildarray2(${1:text (String)}, ${2:lineDelimiter (String)}, ${3:colDelimiter (String)}, ${4:crlfOk (Bool)}, ${5:trimSpaces (Bool)})",
 		"prefix": "buildarray2",
 		"scope": "SSL"
 	},
 	"buildstring": {
-		"body": "buildstring(${1:target}, ${2:start}, ${3:count}, ${4:delimiter})",
+		"body": "buildstring(${1:target (Array)}, ${2:start (Double)}, ${3:count (Double)}, ${4:delimiter (String)})",
 		"prefix": "buildstring",
 		"scope": "SSL"
 	},
 	"buildstring2": {
-		"body": "buildstring2(${1:target}, ${2:lineDelimiter}, ${3:colDelimiter})",
+		"body": "buildstring2(${1:target (Array)}, ${2:lineDelimiter (String)}, ${3:colDelimiter (String)})",
 		"prefix": "buildstring2",
 		"scope": "SSL"
 	},
 	"BuildStringForIn": {
-		"body": "BuildStringForIn(${1:target})",
+		"body": "BuildStringForIn(${1:target (Array)})",
 		"prefix": "BuildStringForIn",
 		"scope": "SSL"
 	},
 	"CallBuiltInFunction": {
-		"body": "CallBuiltInFunction(${1:functionName})",
+		"body": "CallBuiltInFunction(${1:functionName (string)})",
 		"prefix": "CallBuiltInFunction",
 		"scope": "SSL"
 	},
 	"CheckOnFtp": {
-		"body": "CheckOnFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:remoteFileName}, ${4:userName}, ${5:password}, ${6:port}, ${7:proxy}, ${8:isSFTP}, ${9:privateKeyFilePath})",
+		"body": "CheckOnFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:remoteFileName (String)}, ${4:userName (String)}, ${5:password (String)}, ${6:port (Double)}, ${7:proxy (String)}, ${8:isSFTP (Bool)}, ${9:privateKeyFilePath (String)})",
 		"prefix": "CheckOnFtp",
 		"scope": "SSL"
 	},
 	"ChkNewPassword": {
-		"body": "ChkNewPassword(${1:password}, ${2:prevPasswords})",
+		"body": "ChkNewPassword(${1:password (String)}, ${2:prevPasswords (Value)})",
 		"prefix": "ChkNewPassword",
 		"scope": "SSL"
 	},
 	"ChkPassword": {
-		"body": "ChkPassword(${1:userName}, ${2:password})",
+		"body": "ChkPassword(${1:userName (String)}, ${2:password (String)})",
 		"prefix": "ChkPassword",
 		"scope": "SSL"
 	},
 	"Chr": {
-		"body": "Chr(${1:asciiCode})",
+		"body": "Chr(${1:asciiCode (Double)})",
 		"prefix": "Chr",
 		"scope": "SSL"
 	},
 	"ClientEndOfDay": {
-		"body": "ClientEndOfDay(${1:date})",
+		"body": "ClientEndOfDay(${1:date (Value)})",
 		"prefix": "ClientEndOfDay",
 		"scope": "SSL"
 	},
 	"ClientStartOfDay": {
-		"body": "ClientStartOfDay(${1:date})",
+		"body": "ClientStartOfDay(${1:date (Value)})",
 		"prefix": "ClientStartOfDay",
 		"scope": "SSL"
 	},
 	"CMonth": {
-		"body": "CMonth(${1:date})",
+		"body": "CMonth(${1:date (Date)})",
 		"prefix": "CMonth",
 		"scope": "SSL"
 	},
 	"CombineFiles": {
-		"body": "CombineFiles(${1:arFileNames}, ${2:sOutFile})",
+		"body": "CombineFiles(${1:arFileNames (Array)}, ${2:sOutFile (String)})",
 		"prefix": "CombineFiles",
 		"scope": "SSL"
 	},
 	"comparray": {
-		"body": "comparray(${1:a1}, ${2:a2})",
+		"body": "comparray(${1:a1 (Array)}, ${2:a2 (Array)})",
 		"prefix": "comparray",
 		"scope": "SSL"
 	},
 	"Compress": {
-		"body": "Compress(${1:source}, ${2:toFile})",
+		"body": "Compress(${1:source (Value)}, ${2:toFile (Value)})",
 		"prefix": "Compress",
 		"scope": "SSL"
 	},
 	"ConvertReport": {
-		"body": "ConvertReport(${1:file})",
+		"body": "ConvertReport(${1:file (String)})",
 		"prefix": "ConvertReport",
 		"scope": "SSL"
 	},
 	"CopyToFtp": {
-		"body": "CopyToFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:remoteFileNames}, ${4:fileContents}, ${5:userName}, ${6:password}, ${7:port}, ${8:proxy}, ${9:isSFTP}, ${10:privateKeyFilePath})",
+		"body": "CopyToFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:remoteFileNames (Array)}, ${4:fileContents (String)}, ${5:userName (String)}, ${6:password (String)}, ${7:port (Double)}, ${8:proxy (String)}, ${9:isSFTP (Bool)}, ${10:privateKeyFilePath (String)})",
 		"prefix": "CopyToFtp",
 		"scope": "SSL"
 	},
 	"CreateLocal": {
-		"body": "CreateLocal(${1:varName}, ${2:varValue})",
+		"body": "CreateLocal(${1:varName (Value)}, ${2:varValue (Value)})",
 		"prefix": "CreateLocal",
 		"scope": "SSL"
 	},
 	"CreatePublic": {
-		"body": "CreatePublic(${1:varName}, ${2:varValue})",
+		"body": "CreatePublic(${1:varName (Value)}, ${2:varValue (Value)})",
 		"prefix": "CreatePublic",
 		"scope": "SSL"
 	},
 	"CreateUdObject": {
-		"body": "CreateUdObject(${1:args})",
+		"body": "CreateUdObject(${1:args (Value[])})",
 		"prefix": "CreateUdObject",
 		"scope": "SSL"
 	},
 	"CreateZip": {
-		"body": "CreateZip(${1:zipFileName}, ${2:sourceDirectory}, ${3:recurse}, ${4:fileFilter}, ${5:password})",
+		"body": "CreateZip(${1:zipFileName (String)}, ${2:sourceDirectory (String)}, ${3:recurse (Bool)}, ${4:fileFilter (String)}, ${5:password (String)})",
 		"prefix": "CreateZip",
 		"scope": "SSL"
 	},
 	"CToD": {
-		"body": "CToD(${1:dateString})",
+		"body": "CToD(${1:dateString (String)})",
 		"prefix": "CToD",
 		"scope": "SSL"
 	},
 	"DateAdd": {
-		"body": "DateAdd(${1:date}, ${2:number}, ${3:datepart})",
+		"body": "DateAdd(${1:date (Value)}, ${2:number (Value)}, ${3:datepart (Value)})",
 		"prefix": "DateAdd",
 		"scope": "SSL"
 	},
 	"DateDiff": {
-		"body": "DateDiff(${1:startDate}, ${2:endDate}, ${3:datepart})",
+		"body": "DateDiff(${1:startDate (Value)}, ${2:endDate (Value)}, ${3:datepart (Value)})",
 		"prefix": "DateDiff",
 		"scope": "SSL"
 	},
 	"DateDiffEx": {
-		"body": "DateDiffEx(${1:startDate}, ${2:endDate})",
+		"body": "DateDiffEx(${1:startDate (Value)}, ${2:endDate (Value)})",
 		"prefix": "DateDiffEx",
 		"scope": "SSL"
 	},
 	"DateFormat": {
-		"body": "DateFormat(${1:newFormat})",
+		"body": "DateFormat(${1:newFormat (String)})",
 		"prefix": "DateFormat",
 		"scope": "SSL"
 	},
 	"DateFromNumbers": {
-		"body": "DateFromNumbers(${1:year}, ${2:month}, ${3:day}, ${4:hour}, ${5:minute}, ${6:second}, ${7:millisecond}, ${8:makeInvariant})",
+		"body": "DateFromNumbers(${1:year (Value)}, ${2:month (Value)}, ${3:day (Value)}, ${4:hour (Value)}, ${5:minute (Value)}, ${6:second (Value)}, ${7:millisecond (Value)}, ${8:makeInvariant (Value)})",
 		"prefix": "DateFromNumbers",
 		"scope": "SSL"
 	},
 	"DateFromString": {
-		"body": "DateFromString(${1:dateAsString}, ${2:format}, ${3:useLocalCulture}, ${4:makeInvariant})",
+		"body": "DateFromString(${1:dateAsString (Value)}, ${2:format (Value)}, ${3:useLocalCulture (Value)}, ${4:makeInvariant (Value)})",
 		"prefix": "DateFromString",
 		"scope": "SSL"
 	},
 	"DateToString": {
-		"body": "DateToString(${1:date}, ${2:format})",
+		"body": "DateToString(${1:date (Value)}, ${2:format (Value)})",
 		"prefix": "DateToString",
 		"scope": "SSL"
 	},
 	"Day": {
-		"body": "Day(${1:date})",
+		"body": "Day(${1:date (Date)})",
 		"prefix": "Day",
 		"scope": "SSL"
 	},
 	"Decompress": {
-		"body": "Decompress(${1:source}, ${2:fromFile})",
+		"body": "Decompress(${1:source (Value)}, ${2:fromFile (Value)})",
 		"prefix": "Decompress",
 		"scope": "SSL"
 	},
 	"DecryptData": {
-		"body": "DecryptData(${1:inputData}, ${2:password})",
+		"body": "DecryptData(${1:inputData (String)}, ${2:password (String)})",
 		"prefix": "DecryptData",
 		"scope": "SSL"
 	},
 	"delarray": {
-		"body": "delarray(${1:target}, ${2:index})",
+		"body": "delarray(${1:target (Array)}, ${2:index (Double)})",
 		"prefix": "delarray",
 		"scope": "SSL"
 	},
 	"DeleteDirOnFtp": {
-		"body": "DeleteDirOnFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:userName}, ${4:password}, ${5:port}, ${6:proxy}, ${7:isSFTP}, ${8:privateKeyFilePath})",
+		"body": "DeleteDirOnFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:userName (String)}, ${4:password (String)}, ${5:port (Double)}, ${6:proxy (String)}, ${7:isSFTP (Bool)}, ${8:privateKeyFilePath (String)})",
 		"prefix": "DeleteDirOnFtp",
 		"scope": "SSL"
 	},
 	"DeleteFromFtp": {
-		"body": "DeleteFromFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:remoteFileName}, ${4:userName}, ${5:password}, ${6:port}, ${7:proxy}, ${8:isSFTP}, ${9:privateKeyFilePath})",
+		"body": "DeleteFromFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:remoteFileName (String)}, ${4:userName (String)}, ${5:password (String)}, ${6:port (Double)}, ${7:proxy (String)}, ${8:isSFTP (Bool)}, ${9:privateKeyFilePath (String)})",
 		"prefix": "DeleteFromFtp",
 		"scope": "SSL"
 	},
 	"deleteinlinecode": {
-		"body": "deleteinlinecode(${1:s})",
+		"body": "deleteinlinecode(${1:s (Value)})",
 		"prefix": "deleteinlinecode",
 		"scope": "SSL"
 	},
 	"DetectSqlInjections": {
-		"body": "DetectSqlInjections(${1:onOff}, ${2:connectionName})",
+		"body": "DetectSqlInjections(${1:onOff (Value)}, ${2:connectionName (Value)})",
 		"prefix": "DetectSqlInjections",
 		"scope": "SSL"
 	},
 	"Directory": {
-		"body": "Directory(${1:filePattern}, ${2:attributes})",
+		"body": "Directory(${1:filePattern (String)}, ${2:attributes (String)})",
 		"prefix": "Directory",
 		"scope": "SSL"
 	},
 	"DocAcquireWorkitem": {
-		"body": "DocAcquireWorkitem(${1:workitemId})",
+		"body": "DocAcquireWorkitem(${1:workitemId (String)})",
 		"prefix": "DocAcquireWorkitem",
 		"scope": "SSL"
 	},
 	"DocAddUsersToGroup": {
-		"body": "DocAddUsersToGroup(${1:groupName}, ${2:users})",
+		"body": "DocAddUsersToGroup(${1:groupName (String)}, ${2:users (Array)})",
 		"prefix": "DocAddUsersToGroup",
 		"scope": "SSL"
 	},
 	"DocCancelCheckout": {
-		"body": "DocCancelCheckout(${1:documentId})",
+		"body": "DocCancelCheckout(${1:documentId (String)})",
 		"prefix": "DocCancelCheckout",
 		"scope": "SSL"
 	},
 	"DocCheckinDocument": {
-		"body": "DocCheckinDocument(${1:filePath}, ${2:documentId}, ${3:version}, ${4:replaceContent}, ${5:majorVersion})",
+		"body": "DocCheckinDocument(${1:filePath (String)}, ${2:documentId (String)}, ${3:version (String)}, ${4:replaceContent (Bool)}, ${5:majorVersion (Bool)})",
 		"prefix": "DocCheckinDocument",
 		"scope": "SSL"
 	},
 	"DocCheckoutDocument": {
-		"body": "DocCheckoutDocument(${1:documentId})",
+		"body": "DocCheckoutDocument(${1:documentId (String)})",
 		"prefix": "DocCheckoutDocument",
 		"scope": "SSL"
 	},
 	"DocCompleteWorkitem": {
-		"body": "DocCompleteWorkitem(${1:workitemId}, ${2:signOffUser}, ${3:signOffPass}, ${4:signOffReason})",
+		"body": "DocCompleteWorkitem(${1:workitemId (String)}, ${2:signOffUser (String)}, ${3:signOffPass (String)}, ${4:signOffReason (String)})",
 		"prefix": "DocCompleteWorkitem",
 		"scope": "SSL"
 	},
 	"DocCreateACL": {
-		"body": "DocCreateACL(${1:name}, ${2:description}, ${3:groups})",
+		"body": "DocCreateACL(${1:name (String)}, ${2:description (String)}, ${3:groups (Array)})",
 		"prefix": "DocCreateACL",
 		"scope": "SSL"
 	},
 	"DocCreateCabinet": {
-		"body": "DocCreateCabinet(${1:name}, ${2:cabinetType}, ${3:acl})",
+		"body": "DocCreateCabinet(${1:name (String)}, ${2:cabinetType (String)}, ${3:acl (String)})",
 		"prefix": "DocCreateCabinet",
 		"scope": "SSL"
 	},
 	"DocCreateFolder": {
-		"body": "DocCreateFolder(${1:path}, ${2:name}, ${3:acl})",
+		"body": "DocCreateFolder(${1:path (String)}, ${2:name (String)}, ${3:acl (String)})",
 		"prefix": "DocCreateFolder",
 		"scope": "SSL"
 	},
 	"DocCreateGroup": {
-		"body": "DocCreateGroup(${1:name}, ${2:description})",
+		"body": "DocCreateGroup(${1:name (String)}, ${2:description (String)})",
 		"prefix": "DocCreateGroup",
 		"scope": "SSL"
 	},
 	"DocCreateUser": {
-		"body": "DocCreateUser(${1:loginName}, ${2:password}, ${3:userName}, ${4:eMail}, ${5:defaultFolder}, ${6:groupName}, ${7:permissionSet}, ${8:userPrivileges})",
+		"body": "DocCreateUser(${1:loginName (String)}, ${2:password (String)}, ${3:userName (String)}, ${4:eMail (String)}, ${5:defaultFolder (String)}, ${6:groupName (String)}, ${7:permissionSet (String)}, ${8:userPrivileges (Double)})",
 		"prefix": "DocCreateUser",
 		"scope": "SSL"
 	},
 	"DocDelegateWorkitem": {
-		"body": "DocDelegateWorkitem(${1:workitemId}, ${2:user})",
+		"body": "DocDelegateWorkitem(${1:workitemId (String)}, ${2:user (String)})",
 		"prefix": "DocDelegateWorkitem",
 		"scope": "SSL"
 	},
 	"DocDelete": {
-		"body": "DocDelete(${1:objId}, ${2:allVersions})",
+		"body": "DocDelete(${1:objId (String)}, ${2:allVersions (Bool)})",
 		"prefix": "DocDelete",
 		"scope": "SSL"
 	},
 	"DocDeleteCabinet": {
-		"body": "DocDeleteCabinet(${1:cabinetId}, ${2:deepDelete})",
+		"body": "DocDeleteCabinet(${1:cabinetId (String)}, ${2:deepDelete (Bool)})",
 		"prefix": "DocDeleteCabinet",
 		"scope": "SSL"
 	},
 	"DocDeleteFolder": {
-		"body": "DocDeleteFolder(${1:folderId}, ${2:deepDelete})",
+		"body": "DocDeleteFolder(${1:folderId (String)}, ${2:deepDelete (Bool)})",
 		"prefix": "DocDeleteFolder",
 		"scope": "SSL"
 	},
 	"DocDeleteUser": {
-		"body": "DocDeleteUser(${1:name})",
+		"body": "DocDeleteUser(${1:name (String)})",
 		"prefix": "DocDeleteUser",
 		"scope": "SSL"
 	},
 	"DocExists": {
-		"body": "DocExists(${1:objId})",
+		"body": "DocExists(${1:objId (String)})",
 		"prefix": "DocExists",
 		"scope": "SSL"
 	},
 	"DocExistsUser": {
-		"body": "DocExistsUser(${1:loginName}, ${2:userName})",
+		"body": "DocExistsUser(${1:loginName (String)}, ${2:userName (String)})",
 		"prefix": "DocExistsUser",
 		"scope": "SSL"
 	},
 	"DocExportDocument": {
-		"body": "DocExportDocument(${1:documentId}, ${2:format})",
+		"body": "DocExportDocument(${1:documentId (String)}, ${2:format (String)})",
 		"prefix": "DocExportDocument",
 		"scope": "SSL"
 	},
 	"DocGetDocuments": {
-		"body": "DocGetDocuments(${1:folderPath}, ${2:docTypes})",
+		"body": "DocGetDocuments(${1:folderPath (String)}, ${2:docTypes (String)})",
 		"prefix": "DocGetDocuments",
 		"scope": "SSL"
 	},
 	"DocGetFolders": {
-		"body": "DocGetFolders(${1:parentPath})",
+		"body": "DocGetFolders(${1:parentPath (String)})",
 		"prefix": "DocGetFolders",
 		"scope": "SSL"
 	},
 	"DocGetMetadata": {
-		"body": "DocGetMetadata(${1:objId}, ${2:attributes})",
+		"body": "DocGetMetadata(${1:objId (String)}, ${2:attributes (String)})",
 		"prefix": "DocGetMetadata",
 		"scope": "SSL"
 	},
 	"DocGetTasks": {
-		"body": "DocGetTasks(${1:workflowId})",
+		"body": "DocGetTasks(${1:workflowId (String)})",
 		"prefix": "DocGetTasks",
 		"scope": "SSL"
 	},
 	"DocGetTypeAttributes": {
-		"body": "DocGetTypeAttributes(${1:typeName})",
+		"body": "DocGetTypeAttributes(${1:typeName (String)})",
 		"prefix": "DocGetTypeAttributes",
 		"scope": "SSL"
 	},
 	"DocGetTypeAttributesAsDataset": {
-		"body": "DocGetTypeAttributesAsDataset(${1:typeName})",
+		"body": "DocGetTypeAttributesAsDataset(${1:typeName (String)})",
 		"prefix": "DocGetTypeAttributesAsDataset",
 		"scope": "SSL"
 	},
 	"DocGetWorkflowStatus": {
-		"body": "DocGetWorkflowStatus(${1:workflowId})",
+		"body": "DocGetWorkflowStatus(${1:workflowId (String)})",
 		"prefix": "DocGetWorkflowStatus",
 		"scope": "SSL"
 	},
 	"DocGetWorkitemProperties": {
-		"body": "DocGetWorkitemProperties(${1:workitemId})",
+		"body": "DocGetWorkitemProperties(${1:workitemId (String)})",
 		"prefix": "DocGetWorkitemProperties",
 		"scope": "SSL"
 	},
 	"DocImportDocument": {
-		"body": "DocImportDocument(${1:docFile}, ${2:destinationPath}, ${3:docName}, ${4:docType}, ${5:appCode}, ${6:aclName})",
+		"body": "DocImportDocument(${1:docFile (String)}, ${2:destinationPath (String)}, ${3:docName (String)}, ${4:docType (String)}, ${5:appCode (String)}, ${6:aclName (String)})",
 		"prefix": "DocImportDocument",
 		"scope": "SSL"
 	},
 	"DocLoginToDocumentum": {
-		"body": "DocLoginToDocumentum(${1:docBase}, ${2:user}, ${3:password})",
+		"body": "DocLoginToDocumentum(${1:docBase (String)}, ${2:user (String)}, ${3:password (String)})",
 		"prefix": "DocLoginToDocumentum",
 		"scope": "SSL"
 	},
 	"DocPauseWorkflow": {
-		"body": "DocPauseWorkflow(${1:workflowId})",
+		"body": "DocPauseWorkflow(${1:workflowId (String)})",
 		"prefix": "DocPauseWorkflow",
 		"scope": "SSL"
 	},
 	"DocRemoveAllUsersFromGroup": {
-		"body": "DocRemoveAllUsersFromGroup(${1:groupName})",
+		"body": "DocRemoveAllUsersFromGroup(${1:groupName (String)})",
 		"prefix": "DocRemoveAllUsersFromGroup",
 		"scope": "SSL"
 	},
 	"DocRemoveUsersFromGroup": {
-		"body": "DocRemoveUsersFromGroup(${1:groupName}, ${2:users})",
+		"body": "DocRemoveUsersFromGroup(${1:groupName (String)}, ${2:users (Array)})",
 		"prefix": "DocRemoveUsersFromGroup",
 		"scope": "SSL"
 	},
 	"DocRepeatWorkitem": {
-		"body": "DocRepeatWorkitem(${1:workitemId}, ${2:users}, ${3:signOffUser}, ${4:signOffPass}, ${5:signOffReason})",
+		"body": "DocRepeatWorkitem(${1:workitemId (String)}, ${2:users (Array)}, ${3:signOffUser (String)}, ${4:signOffPass (String)}, ${5:signOffReason (String)})",
 		"prefix": "DocRepeatWorkitem",
 		"scope": "SSL"
 	},
 	"DocResumeWorkflow": {
-		"body": "DocResumeWorkflow(${1:workflowId})",
+		"body": "DocResumeWorkflow(${1:workflowId (String)})",
 		"prefix": "DocResumeWorkflow",
 		"scope": "SSL"
 	},
 	"DocSearchAsDataset": {
-		"body": "DocSearchAsDataset(${1:contains}, ${2:startLocation}, ${3:objectType}, ${4:where}, ${5:allVersions}, ${6:resultSetSize})",
+		"body": "DocSearchAsDataset(${1:contains (String)}, ${2:startLocation (String)}, ${3:objectType (String)}, ${4:where (String)}, ${5:allVersions (Bool)}, ${6:resultSetSize (Double)})",
 		"prefix": "DocSearchAsDataset",
 		"scope": "SSL"
 	},
 	"DocSearchFullText": {
-		"body": "DocSearchFullText(${1:textToSearch}, ${2:startLocation}, ${3:resultSetSize})",
+		"body": "DocSearchFullText(${1:textToSearch (String)}, ${2:startLocation (String)}, ${3:resultSetSize (Double)})",
 		"prefix": "DocSearchFullText",
 		"scope": "SSL"
 	},
 	"DocSearchUsingDql": {
-		"body": "DocSearchUsingDql(${1:dql}, ${2:resultSetSize})",
+		"body": "DocSearchUsingDql(${1:dql (String)}, ${2:resultSetSize (Double)})",
 		"prefix": "DocSearchUsingDql",
 		"scope": "SSL"
 	},
 	"DocSetMetadata": {
-		"body": "DocSetMetadata(${1:objId}, ${2:attributes})",
+		"body": "DocSetMetadata(${1:objId (String)}, ${2:attributes (Array)})",
 		"prefix": "DocSetMetadata",
 		"scope": "SSL"
 	},
 	"DocStartWorkflow": {
-		"body": "DocStartWorkflow(${1:workflowId}, ${2:documentIds}, ${3:packageName})",
+		"body": "DocStartWorkflow(${1:workflowId (String)}, ${2:documentIds (Array)}, ${3:packageName (String)})",
 		"prefix": "DocStartWorkflow",
 		"scope": "SSL"
 	},
 	"DocStopWorkflow": {
-		"body": "DocStopWorkflow(${1:workflowId})",
+		"body": "DocStopWorkflow(${1:workflowId (String)})",
 		"prefix": "DocStopWorkflow",
 		"scope": "SSL"
 	},
 	"DocUpdateUser": {
-		"body": "DocUpdateUser(${1:loginName}, ${2:password}, ${3:userName}, ${4:eMail}, ${5:defaultFolder}, ${6:groupName}, ${7:permissionSet}, ${8:userPrivileges})",
+		"body": "DocUpdateUser(${1:loginName (String)}, ${2:password (String)}, ${3:userName (String)}, ${4:eMail (String)}, ${5:defaultFolder (String)}, ${6:groupName (String)}, ${7:permissionSet (String)}, ${8:userPrivileges (Double)})",
 		"prefix": "DocUpdateUser",
 		"scope": "SSL"
 	},
 	"DoProc": {
-		"body": "DoProc(${1:args})",
+		"body": "DoProc(${1:args (Value[])})",
 		"prefix": "DoProc",
 		"scope": "SSL"
 	},
 	"DosSupport": {
-		"body": "DosSupport(${1:cmd}, ${2:prm}, ${3:dbg})",
+		"body": "DosSupport(${1:cmd (String)}, ${2:prm (String)}, ${3:dbg (Value)})",
 		"prefix": "DosSupport",
 		"scope": "SSL"
 	},
 	"DOW": {
-		"body": "DOW(${1:date})",
+		"body": "DOW(${1:date (Date)})",
 		"prefix": "DOW",
 		"scope": "SSL"
 	},
 	"DOY": {
-		"body": "DOY(${1:date})",
+		"body": "DOY(${1:date (Date)})",
 		"prefix": "DOY",
 		"scope": "SSL"
 	},
 	"DToC": {
-		"body": "DToC(${1:date})",
+		"body": "DToC(${1:date (Date)})",
 		"prefix": "DToC",
 		"scope": "SSL"
 	},
 	"DToS": {
-		"body": "DToS(${1:date})",
+		"body": "DToS(${1:date (Date)})",
 		"prefix": "DToS",
 		"scope": "SSL"
 	},
 	"Empty": {
-		"body": "Empty(${1:value})",
+		"body": "Empty(${1:value (Value)})",
 		"prefix": "Empty",
 		"scope": "SSL"
 	},
 	"EncryptData": {
-		"body": "EncryptData(${1:inputData}, ${2:password}, ${3:algorithm}, ${4:key}, ${5:retType})",
+		"body": "EncryptData(${1:inputData (String)}, ${2:password (String)}, ${3:algorithm (String)}, ${4:key (String)}, ${5:retType (String)})",
 		"prefix": "EncryptData",
 		"scope": "SSL"
 	},
 	"endlimsoleconnect": {
-		"body": "endlimsoleconnect(${1:v})",
+		"body": "endlimsoleconnect(${1:v (Value)})",
 		"prefix": "endlimsoleconnect",
 		"scope": "SSL"
 	},
 	"EndLimsTransaction": {
-		"body": "EndLimsTransaction(${1:friendlyName}, ${2:commit})",
+		"body": "EndLimsTransaction(${1:friendlyName (String)}, ${2:commit (Bool)})",
 		"prefix": "EndLimsTransaction",
 		"scope": "SSL"
 	},
 	"ErrorMes": {
-		"body": "ErrorMes(${1:a}, ${2:b})",
+		"body": "ErrorMes(${1:a (Value)}, ${2:b (Value)})",
 		"prefix": "ErrorMes",
 		"scope": "SSL"
 	},
 	"ExecFunction": {
-		"body": "ExecFunction(${1:name}, ${2:parameters})",
+		"body": "ExecFunction(${1:name (string)}, ${2:parameters (object[])})",
 		"prefix": "ExecFunction",
-		"scope": "SSL",
-		"description": "Execute another server script."
+		"scope": "SSL"
 	},
 	"ExecInternal": {
-		"body": "ExecInternal(${1:o}, ${2:methodName}, ${3:arg01}, ${4:arg02}, ${5:Arg03}, ${6:arg04}, ${7:arg05}, ${8:arg06}, ${9:arg07}, ${10:arg08}, ${11:arg09}, ${12:arg10}, ${13:arg11}, ${14:arg12}, ${15:arg13}, ${16:arg14}, ${17:arg15}, ${18:arg16}, ${19:arg17}, ${20:arg18}, ${21:arg19}, ${22:arg20}, ${23:arg21})",
+		"body": "ExecInternal(${1:o (Value)}, ${2:methodName (String)}, ${3:arg01 (Value)}, ${4:arg02 (Value)}, ${5:Arg03 (Value)}, ${6:arg04 (Value)}, ${7:arg05 (Value)}, ${8:arg06 (Value)}, ${9:arg07 (Value)}, ${10:arg08 (Value)}, ${11:arg09 (Value)}, ${12:arg10 (Value)}, ${13:arg11 (Value)}, ${14:arg12 (Value)}, ${15:arg13 (Value)}, ${16:arg14 (Value)}, ${17:arg15 (Value)}, ${18:arg16 (Value)}, ${19:arg17 (Value)}, ${20:arg18 (Value)}, ${21:arg19 (Value)}, ${22:arg20 (Value)}, ${23:arg21 (Value)})",
 		"prefix": "ExecInternal",
 		"scope": "SSL"
 	},
 	"ExecUdf": {
-		"body": "ExecUdf(${1:code}, ${2:args}, ${3:cacheCode})",
+		"body": "ExecUdf(${1:code (string)}, ${2:args (Value[])}, ${3:cacheCode (bool)})",
 		"prefix": "ExecUdf",
 		"scope": "SSL"
 	},
 	"ExecuteDataSource": {
-		"body": "ExecuteDataSource(${1:dsName}, ${2:parameters})",
+		"body": "ExecuteDataSource(${1:dsName (string)}, ${2:parameters (object[])})",
 		"prefix": "ExecuteDataSource",
 		"scope": "SSL"
 	},
 	"extractcol": {
-		"body": "extractcol(${1:target}, ${2:column})",
+		"body": "extractcol(${1:target (Array)}, ${2:column (Double)})",
 		"prefix": "extractcol",
 		"scope": "SSL"
 	},
 	"ExtractZip": {
-		"body": "ExtractZip(${1:zipFileName}, ${2:targetDirectory}, ${3:fileFilter}, ${4:password})",
+		"body": "ExtractZip(${1:zipFileName (String)}, ${2:targetDirectory (String)}, ${3:fileFilter (String)}, ${4:password (String)})",
 		"prefix": "ExtractZip",
 		"scope": "SSL"
 	},
 	"FileSupport": {
-		"body": "FileSupport(${1:fileIdentifier}, ${2:request}, ${3:arg1}, ${4:arg2}, ${5:encoding})",
+		"body": "FileSupport(${1:fileIdentifier (Value)}, ${2:request (Value)}, ${3:arg1 (Value)}, ${4:arg2 (Value)}, ${5:encoding (Value)})",
 		"prefix": "FileSupport",
 		"scope": "SSL"
 	},
 	"FormatErrorMessage": {
-		"body": "FormatErrorMessage(${1:v})",
+		"body": "FormatErrorMessage(${1:v (Value)})",
 		"prefix": "FormatErrorMessage",
 		"scope": "SSL"
 	},
 	"FormatSqlErrorMessage": {
-		"body": "FormatSqlErrorMessage(${1:v})",
+		"body": "FormatSqlErrorMessage(${1:v (Value)})",
 		"prefix": "FormatSqlErrorMessage",
 		"scope": "SSL"
 	},
 	"FromJson": {
-		"body": "FromJson(${1:value})",
+		"body": "FromJson(${1:value (Value)})",
 		"prefix": "FromJson",
 		"scope": "SSL"
 	},
 	"FromXml": {
-		"body": "FromXml(${1:xml})",
+		"body": "FromXml(${1:xml (String)})",
 		"prefix": "FromXml",
 		"scope": "SSL"
 	},
 	"GetAllClientScripts": {
-		"body": "GetAllClientScripts(${1:encodedXFD})",
+		"body": "GetAllClientScripts(${1:encodedXFD (String)})",
 		"prefix": "GetAllClientScripts",
 		"scope": "SSL"
 	},
 	"GetByName": {
-		"body": "GetByName(${1:name})",
+		"body": "GetByName(${1:name (String)})",
 		"prefix": "GetByName",
 		"scope": "SSL"
 	},
 	"GetClientScriptReferences": {
-		"body": "GetClientScriptReferences(${1:csCode})",
+		"body": "GetClientScriptReferences(${1:csCode (Value)})",
 		"prefix": "GetClientScriptReferences",
 		"scope": "SSL"
 	},
 	"GetConnectionByName": {
-		"body": "GetConnectionByName(${1:friendlyName})",
+		"body": "GetConnectionByName(${1:friendlyName (String)})",
 		"prefix": "GetConnectionByName",
 		"scope": "SSL"
 	},
 	"GetDataSet": {
-		"body": "GetDataSet(${1:commandString}, ${2:arrayOfValues}, ${3:includeSchema}, ${4:tableName}, ${5:nullAsBlank}, ${6:invariantDateColumns})",
+		"body": "GetDataSet(${1:commandString (String)}, ${2:arrayOfValues (Array)}, ${3:includeSchema (Bool)}, ${4:tableName (String)}, ${5:nullAsBlank (Bool)}, ${6:invariantDateColumns (Array)})",
 		"prefix": "GetDataSet",
 		"scope": "SSL"
 	},
 	"GetDataSetEx": {
-		"body": "GetDataSetEx(${1:commandString}, ${2:friendlyName}, ${3:arrayOfValues}, ${4:includeSchema}, ${5:includeHeader}, ${6:tableName}, ${7:nullAsBlank}, ${8:invariantDateColumns})",
+		"body": "GetDataSetEx(${1:commandString (String)}, ${2:friendlyName (String)}, ${3:arrayOfValues (Array)}, ${4:includeSchema (Bool)}, ${5:includeHeader (Bool)}, ${6:tableName (String)}, ${7:nullAsBlank (Bool)}, ${8:invariantDateColumns (Array)})",
 		"prefix": "GetDataSetEx",
 		"scope": "SSL"
 	},
 	"GetDataSetFromArray": {
-		"body": "GetDataSetFromArray(${1:arrayOfValues}, ${2:arrayFields})",
+		"body": "GetDataSetFromArray(${1:arrayOfValues (Array)}, ${2:arrayFields (Array)})",
 		"prefix": "GetDataSetFromArray",
 		"scope": "SSL"
 	},
 	"GetDataSetFromArrayEx": {
-		"body": "GetDataSetFromArrayEx(${1:arrayOfValues}, ${2:arrayFields}, ${3:tableName}, ${4:includeHeader}, ${5:includeSchema})",
+		"body": "GetDataSetFromArrayEx(${1:arrayOfValues (Array)}, ${2:arrayFields (Array)}, ${3:tableName (String)}, ${4:includeHeader (Bool)}, ${5:includeSchema (Bool)})",
 		"prefix": "GetDataSetFromArrayEx",
 		"scope": "SSL"
 	},
 	"GetDataSetWithSchemaFromSelect": {
-		"body": "GetDataSetWithSchemaFromSelect(${1:commandString}, ${2:friendlyName}, ${3:arrayOfValues}, ${4:arrayOfPrimaryKeys}, ${5:arrayOfUniqueConstraints})",
+		"body": "GetDataSetWithSchemaFromSelect(${1:commandString (String)}, ${2:friendlyName (String)}, ${3:arrayOfValues (Array)}, ${4:arrayOfPrimaryKeys (Array)}, ${5:arrayOfUniqueConstraints (Array)})",
 		"prefix": "GetDataSetWithSchemaFromSelect",
 		"scope": "SSL"
 	},
 	"GetDataSetXMLFromArray": {
-		"body": "GetDataSetXMLFromArray(${1:arrayOfValues}, ${2:arrayFields}, ${3:tableName}, ${4:includeHeader}, ${5:includeSchema})",
+		"body": "GetDataSetXMLFromArray(${1:arrayOfValues (Array)}, ${2:arrayFields (Array)}, ${3:tableName (String)}, ${4:includeHeader (Bool)}, ${5:includeSchema (Bool)})",
 		"prefix": "GetDataSetXMLFromArray",
 		"scope": "SSL"
 	},
 	"GetDataSetXMLFromSelect": {
-		"body": "GetDataSetXMLFromSelect(${1:commandString}, ${2:friendlyName}, ${3:includeHeader}, ${4:arrayOfValues}, ${5:includeSchema}, ${6:tableName}, ${7:nullAsBlank}, ${8:invariantDateColumns})",
+		"body": "GetDataSetXMLFromSelect(${1:commandString (String)}, ${2:friendlyName (String)}, ${3:includeHeader (Bool)}, ${4:arrayOfValues (Array)}, ${5:includeSchema (Bool)}, ${6:tableName (String)}, ${7:nullAsBlank (Bool)}, ${8:invariantDateColumns (Array)})",
 		"prefix": "GetDataSetXMLFromSelect",
 		"scope": "SSL"
 	},
 	"GetDBMSName": {
-		"body": "GetDBMSName(${1:friendlyName})",
+		"body": "GetDBMSName(${1:friendlyName (String)})",
 		"prefix": "GetDBMSName",
 		"scope": "SSL"
 	},
 	"GetDBMSProviderName": {
-		"body": "GetDBMSProviderName(${1:friendlyName})",
+		"body": "GetDBMSProviderName(${1:friendlyName (String)})",
 		"prefix": "GetDBMSProviderName",
 		"scope": "SSL"
 	},
 	"GetDirFromFtp": {
-		"body": "GetDirFromFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:filePattern}, ${4:userName}, ${5:password}, ${6:port}, ${7:proxy}, ${8:usePassive}, ${9:isSFTP}, ${10:privateKeyFilePath})",
+		"body": "GetDirFromFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:filePattern (String)}, ${4:userName (String)}, ${5:password (String)}, ${6:port (Double)}, ${7:proxy (String)}, ${8:usePassive (Bool)}, ${9:isSFTP (Bool)}, ${10:privateKeyFilePath (String)})",
 		"prefix": "GetDirFromFtp",
 		"scope": "SSL"
 	},
 	"GetDSParameters": {
-		"body": "GetDSParameters(${1:dsName})",
+		"body": "GetDSParameters(${1:dsName (String)})",
 		"prefix": "GetDSParameters",
 		"scope": "SSL"
 	},
 	"GetFileVersion": {
-		"body": "GetFileVersion(${1:fileName})",
+		"body": "GetFileVersion(${1:fileName (String)})",
 		"prefix": "GetFileVersion",
 		"scope": "SSL"
 	},
 	"GetFormReferences": {
-		"body": "GetFormReferences(${1:formId}, ${2:xfdDocument})",
+		"body": "GetFormReferences(${1:formId (Value)}, ${2:xfdDocument (Value)})",
 		"prefix": "GetFormReferences",
 		"scope": "SSL"
 	},
 	"GetFromApplication": {
-		"body": "GetFromApplication(${1:key})",
+		"body": "GetFromApplication(${1:key (String)})",
 		"prefix": "GetFromApplication",
 		"scope": "SSL"
 	},
 	"GetFromFtp": {
-		"body": "GetFromFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:remoteFileName}, ${4:localFileName}, ${5:userName}, ${6:password}, ${7:port}, ${8:proxy}, ${9:isSFTP}, ${10:privateKeyFilePath})",
+		"body": "GetFromFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:remoteFileName (String)}, ${4:localFileName (String)}, ${5:userName (String)}, ${6:password (String)}, ${7:port (Double)}, ${8:proxy (String)}, ${9:isSFTP (Bool)}, ${10:privateKeyFilePath (String)})",
 		"prefix": "GetFromFtp",
 		"scope": "SSL"
 	},
 	"GetFromSession": {
-		"body": "GetFromSession(${1:key})",
+		"body": "GetFromSession(${1:key (String)})",
 		"prefix": "GetFromSession",
 		"scope": "SSL"
 	},
 	"getinlinecode": {
-		"body": "getinlinecode(${1:s}, ${2:variables})",
+		"body": "getinlinecode(${1:s (Value)}, ${2:variables (Array)})",
 		"prefix": "getinlinecode",
 		"scope": "SSL"
 	},
 	"GetInternal": {
-		"body": "GetInternal(${1:o}, ${2:propName})",
+		"body": "GetInternal(${1:o (Value)}, ${2:propName (String)})",
 		"prefix": "GetInternal",
 		"scope": "SSL"
 	},
 	"GetInternalC": {
-		"body": "GetInternalC(${1:o}, ${2:collectionName}, ${3:arg1}, ${4:arg2}, ${5:arg3}, ${6:arg4}, ${7:arg5}, ${8:arg6})",
+		"body": "GetInternalC(${1:o (Value)}, ${2:collectionName (String)}, ${3:arg1 (Value)}, ${4:arg2 (Value)}, ${5:arg3 (Value)}, ${6:arg4 (Value)}, ${7:arg5 (Value)}, ${8:arg6 (Value)})",
 		"prefix": "GetInternalC",
 		"scope": "SSL"
 	},
 	"GetLicenseInfoAsText": {
-		"body": "GetLicenseInfoAsText(${1:bHtml})",
+		"body": "GetLicenseInfoAsText(${1:bHtml (Bool)})",
 		"prefix": "GetLicenseInfoAsText",
 		"scope": "SSL"
 	},
 	"GetNETDataSet": {
-		"body": "GetNETDataSet(${1:commandString}, ${2:friendlyName}, ${3:arrayOfValues}, ${4:tableName}, ${5:returnXml}, ${6:r1Compatible})",
+		"body": "GetNETDataSet(${1:commandString (Value)}, ${2:friendlyName (Value)}, ${3:arrayOfValues (Value)}, ${4:tableName (Value)}, ${5:returnXml (Value)}, ${6:r1Compatible (Value)})",
 		"prefix": "GetNETDataSet",
 		"scope": "SSL"
 	},
 	"GetNoLock": {
-		"body": "GetNoLock(${1:connectionName})",
+		"body": "GetNoLock(${1:connectionName (Value)})",
 		"prefix": "GetNoLock",
 		"scope": "SSL"
 	},
 	"GetRdbmsDelimiter": {
-		"body": "GetRdbmsDelimiter(${1:dsn}, ${2:open})",
+		"body": "GetRdbmsDelimiter(${1:dsn (String)}, ${2:open (Bool)})",
 		"prefix": "GetRdbmsDelimiter",
 		"scope": "SSL"
 	},
 	"getregion": {
-		"body": "getregion(${1:s}, ${2:src}, ${3:dst})",
+		"body": "getregion(${1:s (Value)}, ${2:src (Value)}, ${3:dst (Value)})",
 		"prefix": "getregion",
 		"scope": "SSL"
 	},
 	"getregionex": {
-		"body": "getregionex(${1:s}, ${2:src}, ${3:dst}, ${4:localRegions})",
+		"body": "getregionex(${1:s (Value)}, ${2:src (Value)}, ${3:dst (Value)}, ${4:localRegions (Value)})",
 		"prefix": "getregionex",
 		"scope": "SSL"
 	},
 	"GetSetting": {
-		"body": "GetSetting(${1:name})",
+		"body": "GetSetting(${1:name (String)})",
 		"prefix": "GetSetting",
 		"scope": "SSL"
 	},
 	"GetSettings": {
-		"body": "GetSettings(${1:names})",
+		"body": "GetSettings(${1:names (Array)})",
 		"prefix": "GetSettings",
 		"scope": "SSL"
 	},
 	"GetSSLDataset": {
-		"body": "GetSSLDataset(${1:sql}, ${2:dsn}, ${3:paramNames}, ${4:paramValues}, ${5:tableName}, ${6:nullAsBlank}, ${7:invariantDateColumns})",
+		"body": "GetSSLDataset(${1:sql (String)}, ${2:dsn (String)}, ${3:paramNames (Array)}, ${4:paramValues (Array)}, ${5:tableName (String)}, ${6:nullAsBlank (Bool)}, ${7:invariantDateColumns (Array)})",
 		"prefix": "GetSSLDataset",
 		"scope": "SSL"
 	},
 	"GetTables": {
-		"body": "GetTables(${1:sql})",
+		"body": "GetTables(${1:sql (String)})",
 		"prefix": "GetTables",
 		"scope": "SSL"
 	},
 	"GetTransactionsCount": {
-		"body": "GetTransactionsCount(${1:connection})",
+		"body": "GetTransactionsCount(${1:connection (Value)})",
 		"prefix": "GetTransactionsCount",
 		"scope": "SSL"
 	},
 	"HashData": {
-		"body": "HashData(${1:inputData}, ${2:algorithm})",
+		"body": "HashData(${1:inputData (String)}, ${2:algorithm (String)})",
 		"prefix": "HashData",
 		"scope": "SSL"
 	},
 	"HasProperty": {
-		"body": "HasProperty(${1:o}, ${2:propName})",
+		"body": "HasProperty(${1:o (Value)}, ${2:propName (String)})",
 		"prefix": "HasProperty",
 		"scope": "SSL"
 	},
 	"Hour": {
-		"body": "Hour(${1:date})",
+		"body": "Hour(${1:date (Date)})",
 		"prefix": "Hour",
 		"scope": "SSL"
 	},
 	"HtmlDecode": {
-		"body": "HtmlDecode(${1:data})",
+		"body": "HtmlDecode(${1:data (String)})",
 		"prefix": "HtmlDecode",
 		"scope": "SSL"
 	},
 	"HtmlEncode": {
-		"body": "HtmlEncode(${1:data})",
+		"body": "HtmlEncode(${1:data (String)})",
 		"prefix": "HtmlEncode",
 		"scope": "SSL"
 	},
 	"IgnoreSqlErrors": {
-		"body": "IgnoreSqlErrors(${1:flag})",
+		"body": "IgnoreSqlErrors(${1:flag (Bool)})",
 		"prefix": "IgnoreSqlErrors",
 		"scope": "SSL"
 	},
 	"IIf": {
-		"body": "IIf(${1:condition}, ${2:trueValue}, ${3:falseValue})",
+		"body": "IIf(${1:condition (Bool)}, ${2:trueValue (Value)}, ${3:falseValue (Value)})",
 		"prefix": "IIf",
 		"scope": "SSL"
 	},
 	"InfoMes": {
-		"body": "InfoMes(${1:a}, ${2:b})",
+		"body": "InfoMes(${1:a (Value)}, ${2:b (Value)})",
 		"prefix": "InfoMes",
 		"scope": "SSL"
 	},
 	"Integer": {
-		"body": "Integer(${1:decimalValue})",
+		"body": "Integer(${1:decimalValue (Double)})",
 		"prefix": "Integer",
 		"scope": "SSL"
 	},
 	"IsDBConnected": {
-		"body": "IsDBConnected(${1:friendlyName})",
+		"body": "IsDBConnected(${1:friendlyName (Value)})",
 		"prefix": "IsDBConnected",
 		"scope": "SSL"
 	},
 	"IsDefined": {
-		"body": "IsDefined(${1:varName})",
+		"body": "IsDefined(${1:varName (Value)})",
 		"prefix": "IsDefined",
 		"scope": "SSL"
 	},
 	"IsFeatureAuthorized": {
-		"body": "IsFeatureAuthorized(${1:appGuid})",
+		"body": "IsFeatureAuthorized(${1:appGuid (String)})",
 		"prefix": "IsFeatureAuthorized",
 		"scope": "SSL"
 	},
 	"IsGuid": {
-		"body": "IsGuid(${1:guid})",
+		"body": "IsGuid(${1:guid (String)})",
 		"prefix": "IsGuid",
 		"scope": "SSL"
 	},
 	"IsHex": {
-		"body": "IsHex(${1:source})",
+		"body": "IsHex(${1:source (String)})",
 		"prefix": "IsHex",
 		"scope": "SSL"
 	},
 	"IsInTransaction": {
-		"body": "IsInTransaction(${1:connection})",
+		"body": "IsInTransaction(${1:connection (Value)})",
 		"prefix": "IsInTransaction",
 		"scope": "SSL"
 	},
 	"IsInvariantDate": {
-		"body": "IsInvariantDate(${1:dateValue})",
+		"body": "IsInvariantDate(${1:dateValue (Value)})",
 		"prefix": "IsInvariantDate",
 		"scope": "SSL"
 	},
 	"IsNumeric": {
-		"body": "IsNumeric(${1:sNumber}, ${2:allowHex})",
+		"body": "IsNumeric(${1:sNumber (Value)}, ${2:allowHex (Value)})",
 		"prefix": "IsNumeric",
 		"scope": "SSL"
 	},
 	"IsTable": {
-		"body": "IsTable(${1:friendlyName}, ${2:tableName})",
+		"body": "IsTable(${1:friendlyName (String)}, ${2:tableName (String)})",
 		"prefix": "IsTable",
 		"scope": "SSL"
 	},
 	"IsTableFld": {
-		"body": "IsTableFld(${1:friendlyName}, ${2:tableName}, ${3:fieldName})",
+		"body": "IsTableFld(${1:friendlyName (String)}, ${2:tableName (String)}, ${3:fieldName (String)})",
 		"prefix": "IsTableFld",
 		"scope": "SSL"
 	},
 	"JDay": {
-		"body": "JDay(${1:date})",
+		"body": "JDay(${1:date (Value)})",
 		"prefix": "JDay",
 		"scope": "SSL"
 	},
 	"LCase": {
-		"body": "LCase(${1:condition}, ${2:trueValue}, ${3:falseValue})",
+		"body": "LCase(${1:condition (Bool)}, ${2:trueValue (String)}, ${3:falseValue (String)})",
 		"prefix": "LCase",
 		"scope": "SSL"
 	},
 	"LDAPAuth": {
-		"body": "LDAPAuth(${1:ldapHost}, ${2:ldapPort}, ${3:ldapUserName}, ${4:ldapPassword}, ${5:ldapDistinctiveName}, ${6:secure})",
+		"body": "LDAPAuth(${1:ldapHost (String)}, ${2:ldapPort (Double)}, ${3:ldapUserName (String)}, ${4:ldapPassword (String)}, ${5:ldapDistinctiveName (String)}, ${6:secure (Bool)})",
 		"prefix": "LDAPAuth",
 		"scope": "SSL"
 	},
 	"LDAPAuthEX": {
-		"body": "LDAPAuthEX(${1:ldapHost}, ${2:ldapPort}, ${3:bindUserName}, ${4:bindUserPassword}, ${5:searchUserName}, ${6:searchUserPassword}, ${7:ldapDistinguishedName}, ${8:ldapDistinguishedNameStartSearch}, ${9:searchFilter}, ${10:authAttribName}, ${11:secure})",
+		"body": "LDAPAuthEX(${1:ldapHost (String)}, ${2:ldapPort (Double)}, ${3:bindUserName (String)}, ${4:bindUserPassword (String)}, ${5:searchUserName (String)}, ${6:searchUserPassword (String)}, ${7:ldapDistinguishedName (String)}, ${8:ldapDistinguishedNameStartSearch (String)}, ${9:searchFilter (String)}, ${10:authAttribName (String)}, ${11:secure (Bool)})",
 		"prefix": "LDAPAuthEX",
 		"scope": "SSL"
 	},
 	"lDir": {
-		"body": "lDir(${1:filePattern}, ${2:attributes})",
+		"body": "lDir(${1:filePattern (String)}, ${2:attributes (String)})",
 		"prefix": "lDir",
 		"scope": "SSL"
 	},
 	"Left": {
-		"body": "Left(${1:source}, ${2:length})",
+		"body": "Left(${1:source (String)}, ${2:length (Double)})",
 		"prefix": "Left",
 		"scope": "SSL"
 	},
 	"Len": {
-		"body": "Len(${1:source})",
+		"body": "Len(${1:source (Value)})",
 		"prefix": "Len",
 		"scope": "SSL"
 	},
 	"Let": {
-		"body": "Let(${1:arg1}, ${2:arg2})",
+		"body": "Let(${1:arg1 (Value)}, ${2:arg2 (Value)})",
 		"prefix": "Let",
 		"scope": "SSL"
 	},
 	"LFromHex": {
-		"body": "LFromHex(${1:source})",
+		"body": "LFromHex(${1:source (String)})",
 		"prefix": "LFromHex",
 		"scope": "SSL"
 	},
 	"LHex2Dec": {
-		"body": "LHex2Dec(${1:source})",
+		"body": "LHex2Dec(${1:source (String)})",
 		"prefix": "LHex2Dec",
 		"scope": "SSL"
 	},
 	"LimsAt": {
-		"body": "LimsAt(${1:subString}, ${2:source}, ${3:offset})",
+		"body": "LimsAt(${1:subString (String)}, ${2:source (String)}, ${3:offset (Double)})",
 		"prefix": "LimsAt",
 		"scope": "SSL"
 	},
 	"LIMSDate": {
-		"body": "LIMSDate(${1:date}, ${2:format})",
+		"body": "LIMSDate(${1:date (Value)}, ${2:format (String)})",
 		"prefix": "LIMSDate",
 		"scope": "SSL"
 	},
 	"LimsExec": {
-		"body": "LimsExec(${1:application}, ${2:show}, ${3:arguments})",
+		"body": "LimsExec(${1:application (String)}, ${2:show (Bool)}, ${3:arguments (String)})",
 		"prefix": "LimsExec",
 		"scope": "SSL"
 	},
 	"LimsNETCast": {
-		"body": "LimsNETCast(${1:val}, ${2:newType})",
+		"body": "LimsNETCast(${1:val (Value)}, ${2:newType (String)})",
 		"prefix": "LimsNETCast",
 		"scope": "SSL"
 	},
 	"LimsNETConnect": {
-		"body": "LimsNETConnect(${1:assembly}, ${2:typeName}, ${3:args}, ${4:asStatic})",
+		"body": "LimsNETConnect(${1:assembly (String)}, ${2:typeName (String)}, ${3:args (Array)}, ${4:asStatic (Value)})",
 		"prefix": "LimsNETConnect",
 		"scope": "SSL"
 	},
 	"LimsNETTypeOf": {
-		"body": "LimsNETTypeOf(${1:typeName})",
+		"body": "LimsNETTypeOf(${1:typeName (Value)})",
 		"prefix": "LimsNETTypeOf",
 		"scope": "SSL"
 	},
 	"limsoleconnect": {
-		"body": "limsoleconnect(${1:v})",
+		"body": "limsoleconnect(${1:v (Value)})",
 		"prefix": "limsoleconnect",
 		"scope": "SSL"
 	},
 	"LimsSetCounter": {
-		"body": "LimsSetCounter(${1:tableName}, ${2:fieldName}, ${3:prefix}, ${4:arrayOfFields}, ${5:arrayOfValues}, ${6:incrementWith})",
+		"body": "LimsSetCounter(${1:tableName (String)}, ${2:fieldName (String)}, ${3:prefix (String)}, ${4:arrayOfFields (Array)}, ${5:arrayOfValues (Array)}, ${6:incrementWith (Value)})",
 		"prefix": "LimsSetCounter",
 		"scope": "SSL"
 	},
 	"LimsSqlConnect": {
-		"body": "LimsSqlConnect(${1:friendlyName})",
+		"body": "LimsSqlConnect(${1:friendlyName (String)})",
 		"prefix": "LimsSqlConnect",
 		"scope": "SSL"
 	},
 	"LimsSqlDisconnect": {
-		"body": "LimsSqlDisconnect(${1:friendlyName})",
+		"body": "LimsSqlDisconnect(${1:friendlyName (String)})",
 		"prefix": "LimsSqlDisconnect",
 		"scope": "SSL"
 	},
 	"LimsString": {
-		"body": "LimsString(${1:source})",
+		"body": "LimsString(${1:source (Value)})",
 		"prefix": "LimsString",
 		"scope": "SSL"
 	},
 	"LimsType": {
-		"body": "LimsType(${1:param})",
+		"body": "LimsType(${1:param (Value)})",
 		"prefix": "LimsType",
 		"scope": "SSL"
 	},
 	"LimsTypeEx": {
-		"body": "LimsTypeEx(${1:source})",
+		"body": "LimsTypeEx(${1:source (Value)})",
 		"prefix": "LimsTypeEx",
 		"scope": "SSL"
 	},
 	"LimsXOr": {
-		"body": "LimsXOr(${1:val1}, ${2:val2})",
+		"body": "LimsXOr(${1:val1 (Double)}, ${2:val2 (Double)})",
 		"prefix": "LimsXOr",
 		"scope": "SSL"
 	},
 	"LKill": {
-		"body": "LKill(${1:varName})",
+		"body": "LKill(${1:varName (String)})",
 		"prefix": "LKill",
 		"scope": "SSL"
 	},
 	"LLower": {
-		"body": "LLower(${1:source})",
+		"body": "LLower(${1:source (String)})",
 		"prefix": "LLower",
 		"scope": "SSL"
 	},
 	"Lower": {
-		"body": "Lower(${1:source})",
+		"body": "Lower(${1:source (String)})",
 		"prefix": "Lower",
 		"scope": "SSL"
 	},
 	"LPrint": {
-		"body": "LPrint(${1:source})",
+		"body": "LPrint(${1:source (String)})",
 		"prefix": "LPrint",
 		"scope": "SSL"
 	},
 	"LSearch": {
-		"body": "LSearch(${1:commandString}, ${2:defaultValue}, ${3:friendlyName}, ${4:arrayOfValues})",
+		"body": "LSearch(${1:commandString (String)}, ${2:defaultValue (Value)}, ${3:friendlyName (String)}, ${4:arrayOfValues (Array)})",
 		"prefix": "LSearch",
 		"scope": "SSL"
 	},
 	"LSelect": {
-		"body": "LSelect(${1:commandString}, ${2:fieldList}, ${3:friendlyName}, ${4:arrayOfValues}, ${5:nullAsBlank}, ${6:invariantDateColumns})",
+		"body": "LSelect(${1:commandString (String)}, ${2:fieldList (Array)}, ${3:friendlyName (String)}, ${4:arrayOfValues (Array)}, ${5:nullAsBlank (Bool)}, ${6:invariantDateColumns (Array)})",
 		"prefix": "LSelect",
 		"scope": "SSL"
 	},
 	"LSelect1": {
-		"body": "LSelect1(${1:commandString}, ${2:friendlyName}, ${3:arrayOfValues}, ${4:nullAsBlank}, ${5:invariantDateColumns})",
+		"body": "LSelect1(${1:commandString (String)}, ${2:friendlyName (String)}, ${3:arrayOfValues (Array)}, ${4:nullAsBlank (Bool)}, ${5:invariantDateColumns (Array)})",
 		"prefix": "LSelect1",
 		"scope": "SSL"
 	},
 	"LSelectC": {
-		"body": "LSelectC(${1:commandString}, ${2:fieldList}, ${3:friendlyName}, ${4:arrayOfValues}, ${5:nullAsBlank}, ${6:invariantDateColumns})",
+		"body": "LSelectC(${1:commandString (String)}, ${2:fieldList (Array)}, ${3:friendlyName (String)}, ${4:arrayOfValues (Array)}, ${5:nullAsBlank (Bool)}, ${6:invariantDateColumns (Array)})",
 		"prefix": "LSelectC",
 		"scope": "SSL"
 	},
 	"LStr": {
-		"body": "LStr(${1:number})",
+		"body": "LStr(${1:number (Value)})",
 		"prefix": "LStr",
 		"scope": "SSL"
 	},
 	"LToHex": {
-		"body": "LToHex(${1:source})",
+		"body": "LToHex(${1:source (Value)})",
 		"prefix": "LToHex",
 		"scope": "SSL"
 	},
 	"LTransform": {
-		"body": "LTransform(${1:expression}, ${2:picture})",
+		"body": "LTransform(${1:expression (Value)}, ${2:picture (String)})",
 		"prefix": "LTransform",
 		"scope": "SSL"
 	},
 	"LTrim": {
-		"body": "LTrim(${1:source})",
+		"body": "LTrim(${1:source (String)})",
 		"prefix": "LTrim",
 		"scope": "SSL"
 	},
 	"lWait": {
-		"body": "lWait(${1:seconds})",
+		"body": "lWait(${1:seconds (Double)})",
 		"prefix": "lWait",
 		"scope": "SSL"
 	},
 	"MakeDateInvariant": {
-		"body": "MakeDateInvariant(${1:dateValue}, ${2:columnsIndex})",
+		"body": "MakeDateInvariant(${1:dateValue (Value)}, ${2:columnsIndex (Value)})",
 		"prefix": "MakeDateInvariant",
 		"scope": "SSL"
 	},
 	"MakeDateLocal": {
-		"body": "MakeDateLocal(${1:dateValue}, ${2:columnsIndex})",
+		"body": "MakeDateLocal(${1:dateValue (Value)}, ${2:columnsIndex (Value)})",
 		"prefix": "MakeDateLocal",
 		"scope": "SSL"
 	},
 	"MakeDirOnFtp": {
-		"body": "MakeDirOnFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:userName}, ${4:password}, ${5:port}, ${6:proxy}, ${7:isSFTP}, ${8:privateKeyFilePath})",
+		"body": "MakeDirOnFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:userName (String)}, ${4:password (String)}, ${5:port (Double)}, ${6:proxy (String)}, ${7:isSFTP (Bool)}, ${8:privateKeyFilePath (String)})",
 		"prefix": "MakeDirOnFtp",
 		"scope": "SSL"
 	},
 	"MakeNETObject": {
-		"body": "MakeNETObject(${1:value})",
+		"body": "MakeNETObject(${1:value (Value)})",
 		"prefix": "MakeNETObject",
 		"scope": "SSL"
 	},
 	"MatFunc": {
-		"body": "MatFunc(${1:functionName}, ${2:number})",
+		"body": "MatFunc(${1:functionName (String)}, ${2:number (Double)})",
 		"prefix": "MatFunc",
 		"scope": "SSL"
 	},
 	"Max": {
-		"body": "Max(${1:value1}, ${2:value2})",
+		"body": "Max(${1:value1 (Value)}, ${2:value2 (Value)})",
 		"prefix": "Max",
 		"scope": "SSL"
 	},
 	"MergeGlobalResources": {
-		"body": "MergeGlobalResources(${1:packageRes}, ${2:dictRes})",
+		"body": "MergeGlobalResources(${1:packageRes (String)}, ${2:dictRes (String)})",
 		"prefix": "MergeGlobalResources",
 		"scope": "SSL"
 	},
 	"MergeHtmlForm": {
-		"body": "MergeHtmlForm(${1:formId}, ${2:langId}, ${3:formDefinition}, ${4:formType}, ${5:formFullName}, ${6:offlineMode})",
+		"body": "MergeHtmlForm(${1:formId (Value)}, ${2:langId (Value)}, ${3:formDefinition (Value)}, ${4:formType (Value)}, ${5:formFullName (Value)}, ${6:offlineMode (Value)})",
 		"prefix": "MergeHtmlForm",
 		"scope": "SSL"
 	},
 	"MergeXfd": {
-		"body": "MergeXfd(${1:formId}, ${2:langId}, ${3:xfdDocument})",
+		"body": "MergeXfd(${1:formId (Value)}, ${2:langId (String)}, ${3:xfdDocument (String)})",
 		"prefix": "MergeXfd",
 		"scope": "SSL"
 	},
 	"MimeDecode": {
-		"body": "MimeDecode(${1:base64SSLString}, ${2:noSignature})",
+		"body": "MimeDecode(${1:base64SSLString (Value)}, ${2:noSignature (Value)})",
 		"prefix": "MimeDecode",
 		"scope": "SSL"
 	},
 	"MimeEncode": {
-		"body": "MimeEncode(${1:regularSSLString}, ${2:noSignature})",
+		"body": "MimeEncode(${1:regularSSLString (Value)}, ${2:noSignature (Value)})",
 		"prefix": "MimeEncode",
 		"scope": "SSL"
 	},
 	"Min": {
-		"body": "Min(${1:value1}, ${2:value2})",
+		"body": "Min(${1:value1 (Value)}, ${2:value2 (Value)})",
 		"prefix": "Min",
 		"scope": "SSL"
 	},
 	"Minute": {
-		"body": "Minute(${1:date})",
+		"body": "Minute(${1:date (Date)})",
 		"prefix": "Minute",
 		"scope": "SSL"
 	},
 	"Month": {
-		"body": "Month(${1:date})",
+		"body": "Month(${1:date (Date)})",
 		"prefix": "Month",
 		"scope": "SSL"
 	},
 	"MoveInFtp": {
-		"body": "MoveInFtp(${1:serverNameOrIP}, ${2:remoteDirectoryFrom}, ${3:remoteDirectoryTo}, ${4:remoteFileFrom}, ${5:remoteFileTo}, ${6:userName}, ${7:password}, ${8:port}, ${9:proxy}, ${10:isSFTP}, ${11:privateKeyFilePath})",
+		"body": "MoveInFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectoryFrom (String)}, ${3:remoteDirectoryTo (String)}, ${4:remoteFileFrom (String)}, ${5:remoteFileTo (String)}, ${6:userName (String)}, ${7:password (String)}, ${8:port (Double)}, ${9:proxy (String)}, ${10:isSFTP (Bool)}, ${11:privateKeyFilePath (String)})",
 		"prefix": "MoveInFtp",
 		"scope": "SSL"
 	},
 	"NoOfDays": {
-		"body": "NoOfDays(${1:date})",
+		"body": "NoOfDays(${1:date (Date)})",
 		"prefix": "NoOfDays",
 		"scope": "SSL"
 	},
 	"Nothing": {
-		"body": "Nothing(${1:val})",
+		"body": "Nothing(${1:val (Value)})",
 		"prefix": "Nothing",
 		"scope": "SSL"
 	},
 	"PrepareArrayForIn": {
-		"body": "PrepareArrayForIn(${1:array}, ${2:itemType})",
+		"body": "PrepareArrayForIn(${1:array (Value)}, ${2:itemType (Value)})",
 		"prefix": "PrepareArrayForIn",
 		"scope": "SSL"
 	},
 	"PrepareForm": {
-		"body": "PrepareForm(${1:encodedXFD}, ${2:newId})",
+		"body": "PrepareForm(${1:encodedXFD (String)}, ${2:newId (String)})",
 		"prefix": "PrepareForm",
 		"scope": "SSL"
 	},
 	"PrepareFormClientScript": {
-		"body": "PrepareFormClientScript(${1:encodedXFD}, ${2:stringOfClientScriptPairs})",
+		"body": "PrepareFormClientScript(${1:encodedXFD (String)}, ${2:stringOfClientScriptPairs (String)})",
 		"prefix": "PrepareFormClientScript",
 		"scope": "SSL"
 	},
 	"ProcessXfdFormForImport": {
-		"body": "ProcessXfdFormForImport(${1:settings})",
+		"body": "ProcessXfdFormForImport(${1:settings (Value)})",
 		"prefix": "ProcessXfdFormForImport",
 		"scope": "SSL"
 	},
 	"RaiseError": {
-		"body": "RaiseError(${1:message}, ${2:location}, ${3:errorCode}, ${4:innerException})",
+		"body": "RaiseError(${1:message (String)}, ${2:location (String)}, ${3:errorCode (Double)}, ${4:innerException (Error)})",
 		"prefix": "RaiseError",
 		"scope": "SSL"
 	},
 	"Rand": {
-		"body": "Rand(${1:seed})",
+		"body": "Rand(${1:seed (Double)})",
 		"prefix": "Rand",
 		"scope": "SSL"
 	},
 	"Rat": {
-		"body": "Rat(${1:subStr}, ${2:source})",
+		"body": "Rat(${1:subStr (String)}, ${2:source (String)})",
 		"prefix": "Rat",
 		"scope": "SSL"
 	},
 	"ReadBytesBase64": {
-		"body": "ReadBytesBase64(${1:fileName})",
+		"body": "ReadBytesBase64(${1:fileName (String)})",
 		"prefix": "ReadBytesBase64",
 		"scope": "SSL"
 	},
 	"ReadFromFtp": {
-		"body": "ReadFromFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:remoteFileName}, ${4:maxSize}, ${5:userName}, ${6:password}, ${7:port}, ${8:proxy}, ${9:isSFTP}, ${10:privateKeyFilePath})",
+		"body": "ReadFromFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:remoteFileName (String)}, ${4:maxSize (Double)}, ${5:userName (String)}, ${6:password (String)}, ${7:port (Double)}, ${8:proxy (String)}, ${9:isSFTP (Bool)}, ${10:privateKeyFilePath (String)})",
 		"prefix": "ReadFromFtp",
 		"scope": "SSL"
 	},
 	"ReadText": {
-		"body": "ReadText(${1:fileName}, ${2:charsToRead}, ${3:encoding})",
+		"body": "ReadText(${1:fileName (String)}, ${2:charsToRead (Double)}, ${3:encoding (Value)})",
 		"prefix": "ReadText",
 		"scope": "SSL"
 	},
 	"RenameOnFtp": {
-		"body": "RenameOnFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:fileNameOld}, ${4:fileNameNew}, ${5:userName}, ${6:password}, ${7:port}, ${8:proxy}, ${9:isSFTP}, ${10:privateKeyFilePath})",
+		"body": "RenameOnFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:fileNameOld (String)}, ${4:fileNameNew (String)}, ${5:userName (String)}, ${6:password (String)}, ${7:port (Double)}, ${8:proxy (String)}, ${9:isSFTP (Bool)}, ${10:privateKeyFilePath (String)})",
 		"prefix": "RenameOnFtp",
 		"scope": "SSL"
 	},
 	"Replace": {
-		"body": "Replace(${1:source}, ${2:searchFor}, ${3:replaceWith})",
+		"body": "Replace(${1:source (String)}, ${2:searchFor (String)}, ${3:replaceWith (String)})",
 		"prefix": "Replace",
 		"scope": "SSL"
 	},
 	"Replicate": {
-		"body": "Replicate(${1:source}, ${2:count})",
+		"body": "Replicate(${1:source (String)}, ${2:count (Double)})",
 		"prefix": "Replicate",
 		"scope": "SSL"
 	},
 	"RetrieveLong": {
-		"body": "RetrieveLong(${1:friendlyName}, ${2:tableName}, ${3:columnName}, ${4:whereCondition}, ${5:outputFilePath}, ${6:isCompressed})",
+		"body": "RetrieveLong(${1:friendlyName (String)}, ${2:tableName (String)}, ${3:columnName (String)}, ${4:whereCondition (String)}, ${5:outputFilePath (String)}, ${6:isCompressed (Bool)})",
 		"prefix": "RetrieveLong",
 		"scope": "SSL"
 	},
 	"Right": {
-		"body": "Right(${1:source}, ${2:length})",
+		"body": "Right(${1:source (String)}, ${2:length (Double)})",
 		"prefix": "Right",
 		"scope": "SSL"
 	},
 	"Round": {
-		"body": "Round(${1:value}, ${2:digits}, ${3:midPointRounding})",
+		"body": "Round(${1:value (Value)}, ${2:digits (Value)}, ${3:midPointRounding (Value)})",
 		"prefix": "Round",
 		"scope": "SSL"
 	},
 	"RoundPoint5": {
-		"body": "RoundPoint5(${1:number})",
+		"body": "RoundPoint5(${1:number (Double)})",
 		"prefix": "RoundPoint5",
 		"scope": "SSL"
 	},
 	"RunApp": {
-		"body": "RunApp(${1:application}, ${2:arguments})",
+		"body": "RunApp(${1:application (String)}, ${2:arguments (String)})",
 		"prefix": "RunApp",
 		"scope": "SSL"
 	},
 	"RunDS": {
-		"body": "RunDS(${1:dataSourceName}, ${2:parameters}, ${3:returnType})",
+		"body": "RunDS(${1:dataSourceName (Value)}, ${2:parameters (Value)}, ${3:returnType (Value)})",
 		"prefix": "RunDS",
 		"scope": "SSL"
 	},
 	"RunSQL": {
-		"body": "RunSQL(${1:commandString}, ${2:friendlyName}, ${3:arrayOfValues})",
+		"body": "RunSQL(${1:commandString (String)}, ${2:friendlyName (String)}, ${3:arrayOfValues (Value)})",
 		"prefix": "RunSQL",
 		"scope": "SSL"
 	},
 	"Scient": {
-		"body": "Scient(${1:doubleValue})",
+		"body": "Scient(${1:doubleValue (Double)})",
 		"prefix": "Scient",
 		"scope": "SSL"
 	},
 	"SearchLDAPUser": {
-		"body": "SearchLDAPUser(${1:ldapHost}, ${2:ldapPort}, ${3:bindUserName}, ${4:bindUserPassword}, ${5:searchUserName}, ${6:ldapDistinguishedNameStartSearch}, ${7:searchFilter}, ${8:secure})",
+		"body": "SearchLDAPUser(${1:ldapHost (String)}, ${2:ldapPort (Double)}, ${3:bindUserName (String)}, ${4:bindUserPassword (String)}, ${5:searchUserName (String)}, ${6:ldapDistinguishedNameStartSearch (String)}, ${7:searchFilter (String)}, ${8:secure (Bool)})",
 		"prefix": "SearchLDAPUser",
 		"scope": "SSL"
 	},
 	"Second": {
-		"body": "Second(${1:date})",
+		"body": "Second(${1:date (Date)})",
 		"prefix": "Second",
 		"scope": "SSL"
 	},
 	"SendFromOutbox": {
-		"body": "SendFromOutbox(${1:ignoreErrors}, ${2:useCDO}, ${3:timeout})",
+		"body": "SendFromOutbox(${1:ignoreErrors (Bool)}, ${2:useCDO (Bool)}, ${3:timeout (Double)})",
 		"prefix": "SendFromOutbox",
 		"scope": "SSL"
 	},
 	"SendLimsEmail": {
-		"body": "SendLimsEmail(${1:SMTP}, ${2:recipients}, ${3:fromWho}, ${4:subject}, ${5:messageBody}, ${6:attachList}, ${7:cClist}, ${8:bCClist}, ${9:replyTo}, ${10:nPort}, ${11:uName}, ${12:uPass}, ${13:ignoreErrors}, ${14:useCDO}, ${15:timeout}, ${16:useSSL}, ${17:isBodyHTML}, ${18:encryptedData})",
+		"body": "SendLimsEmail(${1:SMTP (String)}, ${2:recipients (Array)}, ${3:fromWho (String)}, ${4:subject (String)}, ${5:messageBody (String)}, ${6:attachList (Array)}, ${7:cClist (Array)}, ${8:bCClist (Array)}, ${9:replyTo (String)}, ${10:nPort (Double)}, ${11:uName (String)}, ${12:uPass (String)}, ${13:ignoreErrors (Bool)}, ${14:useCDO (Bool)}, ${15:timeout (Double)}, ${16:useSSL (Bool)}, ${17:isBodyHTML (Bool)}, ${18:encryptedData (String)})",
 		"prefix": "SendLimsEmail",
 		"scope": "SSL"
 	},
 	"SendOutlookReminder": {
-		"body": "SendOutlookReminder(${1:SMTP}, ${2:start}, ${3:end}, ${4:subject}, ${5:summary}, ${6:location}, ${7:organizerName}, ${8:organizerEmail}, ${9:attendeeName}, ${10:attendeeEmail}, ${11:nPort}, ${12:uName}, ${13:uPass}, ${14:ignoreErrors}, ${15:useSSL})",
+		"body": "SendOutlookReminder(${1:SMTP (String)}, ${2:start (Date)}, ${3:end (Date)}, ${4:subject (String)}, ${5:summary (String)}, ${6:location (String)}, ${7:organizerName (String)}, ${8:organizerEmail (String)}, ${9:attendeeName (String)}, ${10:attendeeEmail (String)}, ${11:nPort (Double)}, ${12:uName (String)}, ${13:uPass (String)}, ${14:ignoreErrors (Bool)}, ${15:useSSL (Bool)})",
 		"prefix": "SendOutlookReminder",
 		"scope": "SSL"
 	},
 	"SendSMS": {
-		"body": "SendSMS(${1:accountSID}, ${2:authToken}, ${3:fromPhone}, ${4:toPhone}, ${5:message})",
+		"body": "SendSMS(${1:accountSID (Value)}, ${2:authToken (Value)}, ${3:fromPhone (Value)}, ${4:toPhone (Value)}, ${5:message (Value)})",
 		"prefix": "SendSMS",
 		"scope": "SSL"
 	},
 	"SendToFtp": {
-		"body": "SendToFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:remoteFileName}, ${4:localFileName}, ${5:userName}, ${6:password}, ${7:port}, ${8:proxy}, ${9:usePassive}, ${10:isSFTP}, ${11:privateKeyFilePath})",
+		"body": "SendToFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:remoteFileName (String)}, ${4:localFileName (String)}, ${5:userName (String)}, ${6:password (String)}, ${7:port (Double)}, ${8:proxy (String)}, ${9:usePassive (Bool)}, ${10:isSFTP (Bool)}, ${11:privateKeyFilePath (String)})",
 		"prefix": "SendToFtp",
 		"scope": "SSL"
 	},
 	"SendToOutbox": {
-		"body": "SendToOutbox(${1:SMTP}, ${2:recipients}, ${3:fromWho}, ${4:subject}, ${5:messageBody}, ${6:attachList}, ${7:cClist}, ${8:bCClist}, ${9:replyTo}, ${10:nPort}, ${11:uName}, ${12:uPass}, ${13:ignoreErrors}, ${14:useSSL}, ${15:isBodyHTML}, ${16:encryptedData})",
+		"body": "SendToOutbox(${1:SMTP (String)}, ${2:recipients (Array)}, ${3:fromWho (String)}, ${4:subject (String)}, ${5:messageBody (String)}, ${6:attachList (Array)}, ${7:cClist (Array)}, ${8:bCClist (Array)}, ${9:replyTo (String)}, ${10:nPort (Double)}, ${11:uName (String)}, ${12:uPass (String)}, ${13:ignoreErrors (Bool)}, ${14:useSSL (Bool)}, ${15:isBodyHTML (Bool)}, ${16:encryptedData (String)})",
 		"prefix": "SendToOutbox",
 		"scope": "SSL"
 	},
 	"ServerEndOfDay": {
-		"body": "ServerEndOfDay(${1:date})",
+		"body": "ServerEndOfDay(${1:date (Value)})",
 		"prefix": "ServerEndOfDay",
 		"scope": "SSL"
 	},
 	"ServerStartOfDay": {
-		"body": "ServerStartOfDay(${1:date})",
+		"body": "ServerStartOfDay(${1:date (Value)})",
 		"prefix": "ServerStartOfDay",
 		"scope": "SSL"
 	},
 	"SetAmPm": {
-		"body": "SetAmPm(${1:flag})",
+		"body": "SetAmPm(${1:flag (Bool)})",
 		"prefix": "SetAmPm",
 		"scope": "SSL"
 	},
 	"SetByName": {
-		"body": "SetByName(${1:name}, ${2:value})",
+		"body": "SetByName(${1:name (String)}, ${2:value (Value)})",
 		"prefix": "SetByName",
 		"scope": "SSL"
 	},
 	"SetDecimalSeparator": {
-		"body": "SetDecimalSeparator(${1:decimalSep})",
+		"body": "SetDecimalSeparator(${1:decimalSep (String)})",
 		"prefix": "SetDecimalSeparator",
 		"scope": "SSL"
 	},
 	"SetDefaultConnection": {
-		"body": "SetDefaultConnection(${1:defaultConnection})",
+		"body": "SetDefaultConnection(${1:defaultConnection (Value)})",
 		"prefix": "SetDefaultConnection",
 		"scope": "SSL"
 	},
 	"SetGroupSeparator": {
-		"body": "SetGroupSeparator(${1:groupSep})",
+		"body": "SetGroupSeparator(${1:groupSep (String)})",
 		"prefix": "SetGroupSeparator",
 		"scope": "SSL"
 	},
 	"SetInternal": {
-		"body": "SetInternal(${1:o}, ${2:propName}, ${3:propValue})",
+		"body": "SetInternal(${1:o (Value)}, ${2:propName (String)}, ${3:propValue (Value)})",
 		"prefix": "SetInternal",
 		"scope": "SSL"
 	},
 	"SetInternalC": {
-		"body": "SetInternalC(${1:o}, ${2:collectionName}, ${3:val}, ${4:arg1}, ${5:arg2}, ${6:arg3}, ${7:arg4}, ${8:arg5}, ${9:arg6})",
+		"body": "SetInternalC(${1:o (Value)}, ${2:collectionName (String)}, ${3:val (Value)}, ${4:arg1 (Value)}, ${5:arg2 (Value)}, ${6:arg3 (Value)}, ${7:arg4 (Value)}, ${8:arg5 (Value)}, ${9:arg6 (Value)})",
 		"prefix": "SetInternalC",
 		"scope": "SSL"
 	},
 	"SetLocationOracle": {
-		"body": "SetLocationOracle(${1:file}, ${2:server}, ${3:user}, ${4:password}, ${5:encrypted})",
+		"body": "SetLocationOracle(${1:file (String)}, ${2:server (String)}, ${3:user (String)}, ${4:password (String)}, ${5:encrypted (Bool)})",
 		"prefix": "SetLocationOracle",
 		"scope": "SSL"
 	},
 	"SetLocationSQLServer": {
-		"body": "SetLocationSQLServer(${1:file}, ${2:server}, ${3:database}, ${4:owner}, ${5:user}, ${6:password}, ${7:encrypted})",
+		"body": "SetLocationSQLServer(${1:file (String)}, ${2:server (String)}, ${3:database (String)}, ${4:owner (String)}, ${5:user (String)}, ${6:password (String)}, ${7:encrypted (Bool)})",
 		"prefix": "SetLocationSQLServer",
 		"scope": "SSL"
 	},
 	"SetSqlTimeout": {
-		"body": "SetSqlTimeout(${1:timeout}, ${2:connection})",
+		"body": "SetSqlTimeout(${1:timeout (Value)}, ${2:connection (Value)})",
 		"prefix": "SetSqlTimeout",
 		"scope": "SSL"
 	},
 	"SetUserData": {
-		"body": "SetUserData(${1:userName})",
+		"body": "SetUserData(${1:userName (Value)})",
 		"prefix": "SetUserData",
 		"scope": "SSL"
 	},
 	"SetUserPassword": {
-		"body": "SetUserPassword(${1:userName}, ${2:password})",
+		"body": "SetUserPassword(${1:userName (String)}, ${2:password (String)})",
 		"prefix": "SetUserPassword",
 		"scope": "SSL"
 	},
 	"Seval": {
-		"body": "Seval(${1:source}, ${2:codeBlock}, ${3:start}, ${4:count})",
+		"body": "Seval(${1:source (String)}, ${2:codeBlock (String)}, ${3:start (Double)}, ${4:count (Double)})",
 		"prefix": "Seval",
 		"scope": "SSL"
 	},
 	"ShowSqlErrors": {
-		"body": "ShowSqlErrors(${1:flag})",
+		"body": "ShowSqlErrors(${1:flag (Bool)})",
 		"prefix": "ShowSqlErrors",
 		"scope": "SSL"
 	},
 	"SigFig": {
-		"body": "SigFig(${1:standard}, ${2:nrDigits}, ${3:number})",
+		"body": "SigFig(${1:standard (String)}, ${2:nrDigits (Double)}, ${3:number (Double)})",
 		"prefix": "SigFig",
 		"scope": "SSL"
 	},
 	"SortArray": {
-		"body": "SortArray(${1:target}, ${2:numeric})",
+		"body": "SortArray(${1:target (Array)}, ${2:numeric (Value)})",
 		"prefix": "SortArray",
 		"scope": "SSL"
 	},
 	"SQLExecute": {
-		"body": "SQLExecute(${1:commandString}, ${2:friendlyName}, ${3:rollbackExistingTransaction}, ${4:nullAsBlank}, ${5:invariantDateColumns}, ${6:returnType}, ${7:tableName}, ${8:includeSchema}, ${9:includeHeader})",
+		"body": "SQLExecute(${1:commandString (Value)}, ${2:friendlyName (Value)}, ${3:rollbackExistingTransaction (Value)}, ${4:nullAsBlank (Value)}, ${5:invariantDateColumns (Value)}, ${6:returnType (Value)}, ${7:tableName (Value)}, ${8:includeSchema (Value)}, ${9:includeHeader (Value)})",
 		"prefix": "SQLExecute",
 		"scope": "SSL"
 	},
 	"SQLRemoveComments": {
-		"body": "SQLRemoveComments(${1:statement})",
+		"body": "SQLRemoveComments(${1:statement (Value)})",
 		"prefix": "SQLRemoveComments",
 		"scope": "SSL"
 	},
 	"Sqrt": {
-		"body": "Sqrt(${1:number})",
+		"body": "Sqrt(${1:number (Double)})",
 		"prefix": "Sqrt",
 		"scope": "SSL"
 	},
 	"StdRound": {
-		"body": "StdRound(${1:standard}, ${2:nrDigits}, ${3:number})",
+		"body": "StdRound(${1:standard (String)}, ${2:nrDigits (Double)}, ${3:number (Double)})",
 		"prefix": "StdRound",
 		"scope": "SSL"
 	},
 	"Str": {
-		"body": "Str(${1:number}, ${2:length}, ${3:decimals})",
+		"body": "Str(${1:number (Double)}, ${2:length (Double)}, ${3:decimals (Double)})",
 		"prefix": "Str",
 		"scope": "SSL"
 	},
 	"StringAdd": {
-		"body": "StringAdd(${1:sourceA}, ${2:sourceB}, ${3:position})",
+		"body": "StringAdd(${1:sourceA (String)}, ${2:sourceB (String)}, ${3:position (Double)})",
 		"prefix": "StringAdd",
 		"scope": "SSL"
 	},
 	"StringClean": {
-		"body": "StringClean(${1:source}, ${2:position}, ${3:count})",
+		"body": "StringClean(${1:source (String)}, ${2:position (Double)}, ${3:count (Double)})",
 		"prefix": "StringClean",
 		"scope": "SSL"
 	},
 	"StringCreate": {
-		"body": "StringCreate(${1:length})",
+		"body": "StringCreate(${1:length (Double)})",
 		"prefix": "StringCreate",
 		"scope": "SSL"
 	},
 	"StringGet": {
-		"body": "StringGet(${1:source})",
+		"body": "StringGet(${1:source (String)})",
 		"prefix": "StringGet",
 		"scope": "SSL"
 	},
 	"StringKill": {
-		"body": "StringKill(${1:source})",
+		"body": "StringKill(${1:source (String)})",
 		"prefix": "StringKill",
 		"scope": "SSL"
 	},
 	"StringToDate": {
-		"body": "StringToDate(${1:dateString}, ${2:dateFormat})",
+		"body": "StringToDate(${1:dateString (String)}, ${2:dateFormat (String)})",
 		"prefix": "StringToDate",
 		"scope": "SSL"
 	},
 	"StrSrch": {
-		"body": "StrSrch(${1:subStr}, ${2:source}, ${3:indexOrOccurence}, ${4:flag})",
+		"body": "StrSrch(${1:subStr (String)}, ${2:source (String)}, ${3:indexOrOccurence (Double)}, ${4:flag (Bool)})",
 		"prefix": "StrSrch",
 		"scope": "SSL"
 	},
 	"StrTran": {
-		"body": "StrTran(${1:source}, ${2:searchFor}, ${3:replaceWith})",
+		"body": "StrTran(${1:source (String)}, ${2:searchFor (String)}, ${3:replaceWith (String)})",
 		"prefix": "StrTran",
 		"scope": "SSL"
 	},
 	"StrZero": {
-		"body": "StrZero(${1:number}, ${2:length}, ${3:decimals})",
+		"body": "StrZero(${1:number (Double)}, ${2:length (Double)}, ${3:decimals (Double)})",
 		"prefix": "StrZero",
 		"scope": "SSL"
 	},
 	"SubmitToBatch": {
-		"body": "SubmitToBatch(${1:code}, ${2:parameters}, ${3:mode}, ${4:userName}, ${5:password})",
+		"body": "SubmitToBatch(${1:code (String)}, ${2:parameters (Value)}, ${3:mode (String)}, ${4:userName (String)}, ${5:password (String)})",
 		"prefix": "SubmitToBatch",
 		"scope": "SSL"
 	},
 	"SubmitToBatchEx": {
-		"body": "SubmitToBatchEx(${1:code})",
+		"body": "SubmitToBatchEx(${1:code (String)})",
 		"prefix": "SubmitToBatchEx",
 		"scope": "SSL"
 	},
 	"SubStr": {
-		"body": "SubStr(${1:source}, ${2:startPos}, ${3:length})",
+		"body": "SubStr(${1:source (String)}, ${2:startPos (Double)}, ${3:length (Double)})",
 		"prefix": "SubStr",
 		"scope": "SSL"
 	},
 	"SyncDesignResources": {
-		"body": "SyncDesignResources(${1:formID}, ${2:languageID}, ${3:xfdDocument}, ${4:translationOnly})",
+		"body": "SyncDesignResources(${1:formID (String)}, ${2:languageID (String)}, ${3:xfdDocument (String)}, ${4:translationOnly (Bool)})",
 		"prefix": "SyncDesignResources",
 		"scope": "SSL"
 	},
 	"SyncProgramaticResources": {
-		"body": "SyncProgramaticResources(${1:formID}, ${2:languageID}, ${3:resourceDocument}, ${4:translationOnly})",
+		"body": "SyncProgramaticResources(${1:formID (String)}, ${2:languageID (String)}, ${3:resourceDocument (String)}, ${4:translationOnly (Bool)})",
 		"prefix": "SyncProgramaticResources",
 		"scope": "SSL"
 	},
 	"TableFldLst": {
-		"body": "TableFldLst(${1:friendlyName}, ${2:tableName})",
+		"body": "TableFldLst(${1:friendlyName (String)}, ${2:tableName (String)})",
 		"prefix": "TableFldLst",
 		"scope": "SSL"
 	},
 	"ToJson": {
-		"body": "ToJson(${1:value})",
+		"body": "ToJson(${1:value (Value)})",
 		"prefix": "ToJson",
 		"scope": "SSL"
 	},
 	"ToNumeric": {
-		"body": "ToNumeric(${1:sNumber}, ${2:allowHex})",
+		"body": "ToNumeric(${1:sNumber (Value)}, ${2:allowHex (Value)})",
 		"prefix": "ToNumeric",
 		"scope": "SSL"
 	},
 	"ToScientific": {
-		"body": "ToScientific(${1:number}, ${2:decimalPlaces})",
+		"body": "ToScientific(${1:number (Value)}, ${2:decimalPlaces (Value)})",
 		"prefix": "ToScientific",
 		"scope": "SSL"
 	},
 	"ToXml": {
-		"body": "ToXml(${1:o}, ${2:typeName})",
+		"body": "ToXml(${1:o (Value)}, ${2:typeName (String)})",
 		"prefix": "ToXml",
 		"scope": "SSL"
 	},
 	"Trim": {
-		"body": "Trim(${1:source})",
+		"body": "Trim(${1:source (String)})",
 		"prefix": "Trim",
 		"scope": "SSL"
 	},
 	"TryConnect": {
-		"body": "TryConnect(${1:userName}, ${2:utcOffset}, ${3:userType}, ${4:platforma})",
+		"body": "TryConnect(${1:userName (String)}, ${2:utcOffset (Double)}, ${3:userType (String)}, ${4:platforma (String)})",
 		"prefix": "TryConnect",
 		"scope": "SSL"
 	},
 	"UndeclaredVars": {
-		"body": "UndeclaredVars(${1:allowUndeclaredVars})",
+		"body": "UndeclaredVars(${1:allowUndeclaredVars (Bool)})",
 		"prefix": "UndeclaredVars",
 		"scope": "SSL"
 	},
 	"UpdLong": {
-		"body": "UpdLong(${1:friendlyName}, ${2:tableName}, ${3:columnName}, ${4:whereCondition}, ${5:inputFilePath}, ${6:isCompressed})",
+		"body": "UpdLong(${1:friendlyName (String)}, ${2:tableName (String)}, ${3:columnName (String)}, ${4:whereCondition (String)}, ${5:inputFilePath (String)}, ${6:isCompressed (Bool)})",
 		"prefix": "UpdLong",
 		"scope": "SSL"
 	},
 	"Upper": {
-		"body": "Upper(${1:source})",
+		"body": "Upper(${1:source (String)})",
 		"prefix": "Upper",
 		"scope": "SSL"
 	},
 	"UrlDecode": {
-		"body": "UrlDecode(${1:data})",
+		"body": "UrlDecode(${1:data (Value)})",
 		"prefix": "UrlDecode",
 		"scope": "SSL"
 	},
 	"UrlEncode": {
-		"body": "UrlEncode(${1:data})",
+		"body": "UrlEncode(${1:data (Value)})",
 		"prefix": "UrlEncode",
 		"scope": "SSL"
 	},
 	"usrmes": {
-		"body": "usrmes(${1:a}, ${2:b})",
+		"body": "usrmes(${1:a (Value)}, ${2:b (Value)})",
 		"prefix": "usrmes",
 		"scope": "SSL"
 	},
 	"Val": {
-		"body": "Val(${1:sNumber})",
+		"body": "Val(${1:sNumber (String)})",
 		"prefix": "Val",
 		"scope": "SSL"
 	},
 	"Validate": {
-		"body": "Validate(${1:SSLString}, ${2:tableName}, ${3:columnName}, ${4:whereCondition}, ${5:filePath}, ${6:SSLBool})",
+		"body": "Validate(${1:SSLString (ref)}, ${2:tableName (String)}, ${3:columnName (String)}, ${4:whereCondition (String)}, ${5:filePath (String)}, ${6:SSLBool (ref)})",
 		"prefix": "Validate",
 		"scope": "SSL"
 	},
 	"ValidateData": {
-		"body": "ValidateData(${1:data}, ${2:scriptName})",
+		"body": "ValidateData(${1:data (Value)}, ${2:scriptName (Value)})",
 		"prefix": "ValidateData",
 		"scope": "SSL"
 	},
 	"ValidateDate": {
-		"body": "ValidateDate(${1:stringDate}, ${2:useDateFormat})",
+		"body": "ValidateDate(${1:stringDate (String)}, ${2:useDateFormat (Value)})",
 		"prefix": "ValidateDate",
 		"scope": "SSL"
 	},
 	"ValidateDSParams": {
-		"body": "ValidateDSParams(${1:dsParams}, ${2:dsName})",
+		"body": "ValidateDSParams(${1:dsParams (Value)}, ${2:dsName (Value)})",
 		"prefix": "ValidateDSParams",
 		"scope": "SSL"
 	},
 	"ValidateFieldData": {
-		"body": "ValidateFieldData(${1:data}, ${2:tableName}, ${3:fieldName}, ${4:location})",
+		"body": "ValidateFieldData(${1:data (Value)}, ${2:tableName (Value)}, ${3:fieldName (Value)}, ${4:location (Value)})",
 		"prefix": "ValidateFieldData",
 		"scope": "SSL"
 	},
 	"ValidateNumeric": {
-		"body": "ValidateNumeric(${1:sNumber})",
+		"body": "ValidateNumeric(${1:sNumber (String)})",
 		"prefix": "ValidateNumeric",
 		"scope": "SSL"
 	},
 	"VerifySignature": {
-		"body": "VerifySignature(${1:certificateString}, ${2:data}, ${3:signature})",
+		"body": "VerifySignature(${1:certificateString (String)}, ${2:data (String)}, ${3:signature (String)})",
 		"prefix": "VerifySignature",
 		"scope": "SSL"
 	},
 	"WriteBytesBase64": {
-		"body": "WriteBytesBase64(${1:fileName}, ${2:base64Data})",
+		"body": "WriteBytesBase64(${1:fileName (String)}, ${2:base64Data (String)})",
 		"prefix": "WriteBytesBase64",
 		"scope": "SSL"
 	},
 	"WriteText": {
-		"body": "WriteText(${1:fileName}, ${2:charsToWrite}, ${3:confirmRequired}, ${4:append}, ${5:encoding})",
+		"body": "WriteText(${1:fileName (String)}, ${2:charsToWrite (String)}, ${3:confirmRequired (String)}, ${4:append (String)}, ${5:encoding (Value)})",
 		"prefix": "WriteText",
 		"scope": "SSL"
 	},
 	"WriteToFtp": {
-		"body": "WriteToFtp(${1:serverNameOrIP}, ${2:remoteDirectory}, ${3:remoteFileName}, ${4:fileContents}, ${5:userName}, ${6:password}, ${7:port}, ${8:proxy}, ${9:isSFTP}, ${10:privateKeyFilePath})",
+		"body": "WriteToFtp(${1:serverNameOrIP (String)}, ${2:remoteDirectory (String)}, ${3:remoteFileName (String)}, ${4:fileContents (String)}, ${5:userName (String)}, ${6:password (String)}, ${7:port (Double)}, ${8:proxy (String)}, ${9:isSFTP (Bool)}, ${10:privateKeyFilePath (String)})",
 		"prefix": "WriteToFtp",
 		"scope": "SSL"
 	},
 	"XmlDomToUdObject": {
-		"body": "XmlDomToUdObject(${1:xml}, ${2:preserveWhitespace})",
+		"body": "XmlDomToUdObject(${1:xml (Value)}, ${2:preserveWhitespace (Value)})",
 		"prefix": "XmlDomToUdObject",
 		"scope": "SSL"
 	},
 	"XmlExportSql": {
-		"body": "XmlExportSql(${1:sql}, ${2:file}, ${3:db}, ${4:sqlParams}, ${5:table})",
+		"body": "XmlExportSql(${1:sql (String)}, ${2:file (String)}, ${3:db (String)}, ${4:sqlParams (Array)}, ${5:table (String)})",
 		"prefix": "XmlExportSql",
 		"scope": "SSL"
 	},
 	"Year": {
-		"body": "Year(${1:date})",
+		"body": "Year(${1:date (Date)})",
 		"prefix": "Year",
 		"scope": "SSL"
 	}
